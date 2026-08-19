@@ -2,34 +2,63 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
         content="Wedding Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi"
     >
 
-    <title>Wedding Invitation – Allfred & Verginia Keerthi</title>
+    <title>
+        Wedding Invitation – Allfred & Verginia Keerthi
+    </title>
 
-    <!-- Google Fonts -->
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- Star background -->
+
+    <!-- =====================================================
+         STARFIELD
+    ====================================================== -->
+
     <canvas id="starfield"></canvas>
+
 
     <!-- =====================================================
          BACKGROUND MUSIC
@@ -37,643 +66,1022 @@
 
     <audio
         id="weddingSong"
-        autoplay
         loop
         preload="auto"
         playsinline
     >
+
         <source
             src="Vallavan_bgm.music(256k).mp3.mpeg"
             type="audio/mpeg"
         >
 
-        Your browser does not support the audio element.
     </audio>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section id="hero">
-
-        <div class="moon-glow"></div>
-
-        <p class="join-label">
-            ✦ With the Blessings of Almighty God ✦
-        </p>
-
-        <h1 class="invite-title">
-            Wedding Invitation
-        </h1>
-
-        <div class="gold-line"></div>
-
-        <div class="names">
-            A.C.S. Allfred
-
-            <span class="amp">
-                &amp;
-            </span>
-
-            A.J.K. Verginia Keerthi
-        </div>
-
-        <p class="tagline">
-            “What God has joined together,
-            let no one separate.”
-
-            <br>
-
-            <span>
-                — Mark 10:9
-            </span>
-        </p>
-
-        <p class="invitation-text">
-            With the abundant blessings of Almighty God
-            and the loving prayers of our beloved
-            grandparents and family members,
-            we cordially invite you to grace the wedding
-            ceremony of our beloved children with your
-            esteemed presence and blessings.
-        </p>
-
-    </section>
-
 
     <!-- =====================================================
-         COUNTDOWN
+         COVER / OPENING SCREEN
     ====================================================== -->
 
-    <section id="countdown" class="fade-in">
+    <div
+        id="weddingCover"
+        class="wedding-cover"
+    >
 
-        <div class="container">
+        <!-- Moon glow -->
 
-            <span class="section-label">
-                Counting down to the wedding day
-            </span>
+        <div class="cover-moon-glow"></div>
 
-            <div class="divider">
-                <span>✦</span>
-            </div>
 
-            <div class="countdown-grid">
+        <!-- Decorative small stars -->
 
-                <div class="countdown-box">
-                    <div class="num" id="cdDays">--</div>
-                    <div class="lbl">Days</div>
-                </div>
+        <div class="cover-star star-1">✦</div>
 
-                <div class="countdown-box">
-                    <div class="num" id="cdHours">--</div>
-                    <div class="lbl">Hours</div>
-                </div>
+        <div class="cover-star star-2">✧</div>
 
-                <div class="countdown-box">
-                    <div class="num" id="cdMins">--</div>
-                    <div class="lbl">Minutes</div>
-                </div>
+        <div class="cover-star star-3">✦</div>
 
-                <div class="countdown-box">
-                    <div class="num" id="cdSecs">--</div>
-                    <div class="lbl">Seconds</div>
-                </div>
+        <div class="cover-star star-4">✧</div>
 
-            </div>
 
-        </div>
+        <!-- Cover content -->
 
-    </section>
+        <div class="cover-content">
 
 
-    <!-- =====================================================
-         FAMILY
-    ====================================================== -->
+            <!-- Blessing -->
 
-    <section id="family" class="fade-in">
+            <p class="cover-blessing">
 
-        <div class="container">
-
-            <span class="section-label">
-                With the blessings of our families
-            </span>
-
-            <div class="divider">
-                <span>♡</span>
-            </div>
-
-            <div class="family-grid">
-
-                <div class="family-card">
-
-                    <p class="family-label">
-                        Bride's Family
-                    </p>
-
-                    <h2>
-                        Mrs. Cecilly Charles
-                    </h2>
-
-                    <p>
-                        Coimbatore
-                    </p>
-
-                </div>
-
-
-                <div class="family-card">
-
-                    <p class="family-label">
-                        Groom's Family
-                    </p>
-
-                    <h2>
-                        Mr. G. Anthonyswamy Jaikumar
-                    </h2>
-
-                    <h2>
-                        Mrs. A.J.K. Irudaya Catherine
-                    </h2>
-
-                    <p>
-                        Bengaluru
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         WEDDING CEREMONY
-    ====================================================== -->
-
-    <section id="events" class="fade-in">
-
-        <div class="container">
-
-            <span class="section-label">
-                The Wedding Ceremony
-            </span>
-
-            <div class="divider">
-                <span>✦</span>
-            </div>
-
-            <h2 class="section-title">
-                Holy Matrimony
-            </h2>
-
-            <div class="event-card single-event">
-
-                <p class="event-type">
-                    ✿ Wedding Day ✿
-                </p>
-
-                <div class="big-date">
-                    02
-                </div>
-
-                <div class="month-year">
-                    September 2026
-                </div>
-
-                <div class="day-name">
-                    Wednesday
-                </div>
-
-                <div class="divider">
-                    <span>♡</span>
-                </div>
-
-                <div class="info-row">
-                    <span>🕘</span>
-                    <span>9:30 AM</span>
-                </div>
-
-                <div class="info-row">
-                    <span>⛪</span>
-
-                    <span>
-                        St. Joseph's Church,
-                        <br>
-                        Podanur, Coimbatore
-                    </span>
-                </div>
-
-                <p class="bishop">
-
-                    Holy Mass will be solemnized by
-
-                    <br>
-
-                    <strong>
-                        His Grace Most Rev. Dr. Arokiaraj Savarimuthu
-                    </strong>
-
-                    <br>
-
-                    <span>
-                        (Bishop of the Diocese of Tiruchirappalli)
-                    </span>
-
-                    <br>
-
-                    together with the concelebrating priests.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CALENDAR
-    ====================================================== -->
-
-    <section id="calendar" class="fade-in">
-
-        <div class="container">
-
-            <span class="section-label">
-                Mark your calendar
-            </span>
-
-            <div class="divider">
-                <span>✦</span>
-            </div>
-
-            <h2 class="section-title">
-                September 2026
-            </h2>
-
-            <br>
-
-            <div class="cal-widget">
-
-                <div class="cal-header">
-                    September 2026
-                </div>
-
-                <div
-                    class="cal-grid"
-                    id="calGrid"
-                ></div>
-
-                <div class="cal-legend">
-
-                    <span>
-                        <span class="dot dot-gold"></span>
-                        Wedding – 2nd
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         WEDDING VENUE
-    ====================================================== -->
-
-    <section id="venue" class="fade-in">
-
-        <div class="container">
-
-            <span class="section-label">
-                Where love awaits
-            </span>
-
-            <div class="divider">
-                <span>✦</span>
-            </div>
-
-
-            <div class="reception-box">
-
-                <h2 class="section-title">
-                    Wedding Venue
-                </h2>
-
-                <p>
-                    We request the honour of your presence at
-                    the wedding ceremony at
-
-                    <strong>
-                        St. Joseph's Church,
-                        Podanur,
-                        Coimbatore
-                    </strong>
-
-                    on
-
-                    <strong>
-                        02 September 2026 at 9:30 AM
-                    </strong>
-                </p>
-
-            </div>
-
-
-            <div class="venue-card fade-in">
-
-                <div class="map-wrapper">
-
-                    <iframe
-                        src="https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="St. Joseph's Church, Podanur, Coimbatore">
-                    </iframe>
-
-                </div>
-
-                <div class="venue-info">
-
-                    <p class="venue-type">
-                        ⛪ Wedding Venue
-                    </p>
-
-                    <h3>
-                        St. Joseph's Church
-                    </h3>
-
-                    <p>
-                        Podanur,
-                        <br>
-                        Coimbatore
-                    </p>
-
-                    <p>
-                        02 September 2026 · 9:30 AM
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         RECEPTION
-    ====================================================== -->
-
-    <section id="reception" class="fade-in">
-
-        <div class="container">
-
-            <span class="section-label">
-                And thereafter
-            </span>
-
-            <div class="divider">
-                <span>♡</span>
-            </div>
-
-
-            <div class="reception-box">
-
-                <h2 class="section-title">
-                    Reception
-                </h2>
-
-                <p>
-                    And thereafter, for the reception at
-
-                    <strong>
-                        Lakshmi Hall,
-                        Bharathi Nagar,
-                        Podanur Main Road,
-                        Coimbatore.
-                    </strong>
-                </p>
-
-            </div>
-
-
-            <div class="venue-card fade-in">
-
-                <div class="map-wrapper">
-
-                    <iframe
-                        src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Lakshmi Hall, Podanur, Coimbatore">
-                    </iframe>
-
-                </div>
-
-                <div class="venue-info">
-
-                    <p class="venue-type">
-                        🎉 Reception Venue
-                    </p>
-
-                    <h3>
-                        Lakshmi Hall
-                    </h3>
-
-                    <p>
-                        Bharathi Nagar,
-                        Podanur Main Road,
-                        <br>
-                        Coimbatore
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <section id="footer">
-
-        <svg
-            class="cityscape"
-            viewBox="0 0 1000 260"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMax meet"
-        >
-
-            <g fill="#d4aa70">
-
-                <rect x="0" y="180" width="1000" height="80"/>
-
-                <rect x="20" y="140" width="40" height="40"/>
-                <rect x="70" y="120" width="50" height="60"/>
-                <rect x="130" y="100" width="35" height="80"/>
-                <rect x="175" y="130" width="30" height="50"/>
-                <rect x="215" y="110" width="55" height="70"/>
-                <rect x="280" y="90" width="40" height="90"/>
-                <rect x="330" y="120" width="30" height="60"/>
-                <rect x="370" y="70" width="45" height="110"/>
-                <rect x="430" y="100" width="60" height="80"/>
-
-                <polygon points="460,60 430,100 490,100"/>
-
-                <rect x="453" y="35" width="14" height="30"/>
-                <rect x="447" y="52" width="26" height="5"/>
-
-                <rect x="500" y="80" width="45" height="100"/>
-                <rect x="555" y="110" width="30" height="70"/>
-                <rect x="595" y="90" width="50" height="90"/>
-                <rect x="655" y="120" width="35" height="60"/>
-                <rect x="700" y="100" width="40" height="80"/>
-                <rect x="750" y="130" width="30" height="50"/>
-                <rect x="790" y="110" width="50" height="70"/>
-                <rect x="850" y="140" width="40" height="40"/>
-                <rect x="900" y="120" width="35" height="60"/>
-                <rect x="945" y="150" width="55" height="30"/>
-
-            </g>
-
-
-            <g
-                transform="translate(450,115)"
-                fill="#1a2a5a"
-            >
-
-                <ellipse
-                    cx="-15"
-                    cy="-30"
-                    rx="9"
-                    ry="9"
-                />
-
-                <path
-                    d="M-24 -20 Q-25 10 -35 40 Q-5 40 -5 -20Z"
-                />
-
-                <ellipse
-                    cx="15"
-                    cy="-30"
-                    rx="9"
-                    ry="9"
-                />
-
-                <path
-                    d="M6 -20 Q5 10 25 40 Q35 40 24 -20Z"
-                />
-
-                <path
-                    d="M-5 0 Q0 5 5 0"
-                    stroke="#d4aa70"
-                    stroke-width="2"
-                    fill="none"
-                />
-
-            </g>
-
-
-            <circle
-                cx="500"
-                cy="30"
-                r="25"
-                fill="rgba(212,170,112,0.15)"
-            />
-
-            <circle
-                cx="500"
-                cy="30"
-                r="18"
-                fill="rgba(212,170,112,0.1)"
-            />
-
-        </svg>
-
-
-        <div class="container footer-content">
-
-            <span class="section-label">
-                With Love
-            </span>
-
-            <div class="divider">
-                <span>✦</span>
-            </div>
-
-            <p class="footer-msg">
-
-                “Your gracious presence and blessings
-                will greatly enhance our joy on this
-                auspicious occasion.”
+                ✦ With the Blessings of Almighty God ✦
 
             </p>
 
-            <div class="footer-names">
+
+            <!-- Main title -->
+
+            <h1 class="cover-title">
+
+                Wedding Invitation
+
+            </h1>
+
+
+            <!-- Gold divider -->
+
+            <div class="cover-gold-line"></div>
+
+
+            <!-- Couple names -->
+
+            <div class="cover-names">
+
+                <span>
+                    A.C.S. Allfred
+                </span>
+
+
+                <span class="cover-amp">
+                    &amp;
+                </span>
+
+
+                <span>
+                    A.J.K. Verginia Keerthi
+                </span>
+
+            </div>
+
+
+            <!-- Bible verse -->
+
+            <p class="cover-verse">
+
+                “What God has joined together,
+                <br>
+                let no one separate.”
+
+                <span>
+                    — Mark 10:9
+                </span>
+
+            </p>
+
+
+            <!-- Opening text -->
+
+            <p class="cover-open">
+
+                Tap anywhere to enter
+
+            </p>
+
+
+            <!-- Decorative bottom symbol -->
+
+            <div class="cover-symbol">
+                ♡
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN WEDDING WEBSITE
+    ====================================================== -->
+
+    <main id="mainWeddingSite">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section id="hero">
+
+            <div class="moon-glow"></div>
+
+
+            <p class="join-label">
+
+                ✦ With the Blessings of Almighty God ✦
+
+            </p>
+
+
+            <h1 class="invite-title">
+
+                Wedding Invitation
+
+            </h1>
+
+
+            <div class="gold-line"></div>
+
+
+            <div class="names">
 
                 A.C.S. Allfred
-                &amp;
+
+                <span class="amp">
+                    &amp;
+                </span>
+
                 A.J.K. Verginia Keerthi
 
             </div>
 
-            <div class="footer-date">
 
-                02
-                &nbsp;
-                September
-                &nbsp;
-                2026
+            <p class="tagline">
 
-            </div>
+                “What God has joined together,
+                let no one separate.”
 
-            <br>
-            <br>
+                <br>
 
-            <p class="creator">
-
-                Made by: Justin Cruz
-
-                &nbsp;|&nbsp;
-
-                <a
-                    href="https://www.instagram.com/cruxxz.__"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    📸 @cruxxz.__
-                </a>
-
-                &nbsp;|&nbsp;
-
-                <a href="tel:+917418006223">
-                    📞 +91 7418006223
-                </a>
+                <span>
+                    — Mark 10:9
+                </span>
 
             </p>
 
-        </div>
 
-    </section>
+            <p class="invitation-text">
+
+                With the abundant blessings of Almighty God
+                and the loving prayers of our beloved
+                grandparents and family members,
+                we cordially invite you to grace the wedding
+                ceremony of our beloved children with your
+                esteemed presence and blessings.
+
+            </p>
+
+        </section>
 
 
-    <!-- JavaScript -->
+
+        <!-- =================================================
+             COUNTDOWN
+        ================================================== -->
+
+        <section
+            id="countdown"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+                <span class="section-label">
+
+                    Counting down to the wedding day
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>✦</span>
+
+                </div>
+
+
+                <div class="countdown-grid">
+
+
+                    <div class="countdown-box">
+
+                        <div
+                            class="num"
+                            id="cdDays"
+                        >
+                            --
+                        </div>
+
+                        <div class="lbl">
+                            Days
+                        </div>
+
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <div
+                            class="num"
+                            id="cdHours"
+                        >
+                            --
+                        </div>
+
+                        <div class="lbl">
+                            Hours
+                        </div>
+
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <div
+                            class="num"
+                            id="cdMins"
+                        >
+                            --
+                        </div>
+
+                        <div class="lbl">
+                            Minutes
+                        </div>
+
+                    </div>
+
+
+                    <div class="countdown-box">
+
+                        <div
+                            class="num"
+                            id="cdSecs"
+                        >
+                            --
+                        </div>
+
+                        <div class="lbl">
+                            Seconds
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FAMILY
+        ================================================== -->
+
+        <section
+            id="family"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+
+                <span class="section-label">
+
+                    With the blessings of our families
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <div class="family-grid">
+
+
+                    <div class="family-card">
+
+                        <p class="family-label">
+
+                            Bride's Family
+
+                        </p>
+
+
+                        <h2>
+                            Mrs. Cecilly Charles
+                        </h2>
+
+
+                        <p>
+                            Coimbatore
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="family-card">
+
+                        <p class="family-label">
+
+                            Groom's Family
+
+                        </p>
+
+
+                        <h2>
+                            Mr. G. Anthonyswamy Jaikumar
+                        </h2>
+
+
+                        <h2>
+                            Mrs. A.J.K. Irudaya Catherine
+                        </h2>
+
+
+                        <p>
+                            Bengaluru
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WEDDING CEREMONY
+        ================================================== -->
+
+        <section
+            id="events"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+
+                <span class="section-label">
+
+                    The Wedding Ceremony
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>✦</span>
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Holy Matrimony
+
+                </h2>
+
+
+                <div class="event-card single-event">
+
+
+                    <p class="event-type">
+
+                        ✿ Wedding Day ✿
+
+                    </p>
+
+
+                    <div class="big-date">
+                        02
+                    </div>
+
+
+                    <div class="month-year">
+                        September 2026
+                    </div>
+
+
+                    <div class="day-name">
+                        Wednesday
+                    </div>
+
+
+                    <div class="divider">
+
+                        <span>♡</span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>🕘</span>
+
+                        <span>
+                            9:30 AM
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>⛪</span>
+
+                        <span>
+
+                            St. Joseph's Church,
+
+                            <br>
+
+                            Podanur, Coimbatore
+
+                        </span>
+
+                    </div>
+
+
+                    <p class="bishop">
+
+                        Holy Mass will be solemnized by
+
+                        <br>
+
+                        <strong>
+                            His Grace Most Rev. Dr. Arokiaraj Savarimuthu
+                        </strong>
+
+                        <br>
+
+                        <span>
+                            (Bishop of the Diocese of Tiruchirappalli)
+                        </span>
+
+                        <br>
+
+                        together with the concelebrating priests.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CALENDAR
+        ================================================== -->
+
+        <section
+            id="calendar"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+
+                <span class="section-label">
+
+                    Mark your calendar
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>✦</span>
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    September 2026
+
+                </h2>
+
+
+                <br>
+
+
+                <div class="cal-widget">
+
+
+                    <div class="cal-header">
+
+                        September 2026
+
+                    </div>
+
+
+                    <div
+                        class="cal-grid"
+                        id="calGrid"
+                    ></div>
+
+
+                    <div class="cal-legend">
+
+                        <span>
+
+                            <span class="dot dot-gold"></span>
+
+                            Wedding – 2nd
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WEDDING VENUE
+        ================================================== -->
+
+        <section
+            id="venue"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+
+                <span class="section-label">
+
+                    Where love awaits
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>✦</span>
+
+                </div>
+
+
+                <div class="reception-box">
+
+
+                    <h2 class="section-title">
+
+                        Wedding Venue
+
+                    </h2>
+
+
+                    <p>
+
+                        We request the honour of your presence
+                        at the wedding ceremony at
+
+                        <strong>
+
+                            St. Joseph's Church,
+                            Podanur,
+                            Coimbatore
+
+                        </strong>
+
+                        on
+
+                        <strong>
+
+                            02 September 2026 at 9:30 AM
+
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="venue-card fade-in">
+
+
+                    <div class="map-wrapper">
+
+                        <iframe
+                            src="https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="St. Joseph's Church, Podanur, Coimbatore"
+                        ></iframe>
+
+                    </div>
+
+
+                    <div class="venue-info">
+
+
+                        <p class="venue-type">
+
+                            ⛪ Wedding Venue
+
+                        </p>
+
+
+                        <h3>
+
+                            St. Joseph's Church
+
+                        </h3>
+
+
+                        <p>
+
+                            Podanur,
+
+                            <br>
+
+                            Coimbatore
+
+                        </p>
+
+
+                        <p>
+
+                            02 September 2026 · 9:30 AM
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RECEPTION
+        ================================================== -->
+
+        <section
+            id="reception"
+            class="fade-in"
+        >
+
+            <div class="container">
+
+
+                <span class="section-label">
+
+                    And thereafter
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <div class="reception-box">
+
+
+                    <h2 class="section-title">
+
+                        Reception
+
+                    </h2>
+
+
+                    <p>
+
+                        And thereafter, for the reception at
+
+                        <strong>
+
+                            Lakshmi Hall,
+                            Bharathi Nagar,
+                            Podanur Main Road,
+                            Coimbatore.
+
+                        </strong>
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="venue-card fade-in">
+
+
+                    <div class="map-wrapper">
+
+                        <iframe
+                            src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lakshmi Hall, Podanur, Coimbatore"
+                        ></iframe>
+
+                    </div>
+
+
+                    <div class="venue-info">
+
+
+                        <p class="venue-type">
+
+                            🎉 Reception Venue
+
+                        </p>
+
+
+                        <h3>
+
+                            Lakshmi Hall
+
+                        </h3>
+
+
+                        <p>
+
+                            Bharathi Nagar,
+                            Podanur Main Road,
+
+                            <br>
+
+                            Coimbatore
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <section id="footer">
+
+
+            <svg
+                class="cityscape"
+                viewBox="0 0 1000 260"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMax meet"
+            >
+
+
+                <g fill="#d4aa70">
+
+                    <rect
+                        x="0"
+                        y="180"
+                        width="1000"
+                        height="80"
+                    />
+
+                    <rect x="20" y="140" width="40" height="40"/>
+                    <rect x="70" y="120" width="50" height="60"/>
+                    <rect x="130" y="100" width="35" height="80"/>
+                    <rect x="175" y="130" width="30" height="50"/>
+                    <rect x="215" y="110" width="55" height="70"/>
+                    <rect x="280" y="90" width="40" height="90"/>
+                    <rect x="330" y="120" width="30" height="60"/>
+                    <rect x="370" y="70" width="45" height="110"/>
+                    <rect x="430" y="100" width="60" height="80"/>
+
+                    <polygon points="460,60 430,100 490,100"/>
+
+                    <rect x="453" y="35" width="14" height="30"/>
+                    <rect x="447" y="52" width="26" height="5"/>
+
+                    <rect x="500" y="80" width="45" height="100"/>
+                    <rect x="555" y="110" width="30" height="70"/>
+                    <rect x="595" y="90" width="50" height="90"/>
+                    <rect x="655" y="120" width="35" height="60"/>
+                    <rect x="700" y="100" width="40" height="80"/>
+                    <rect x="750" y="130" width="30" height="50"/>
+                    <rect x="790" y="110" width="50" height="70"/>
+                    <rect x="850" y="140" width="40" height="40"/>
+                    <rect x="900" y="120" width="35" height="60"/>
+                    <rect x="945" y="150" width="55" height="30"/>
+
+                </g>
+
+
+                <g
+                    transform="translate(450,115)"
+                    fill="#1a2a5a"
+                >
+
+                    <ellipse
+                        cx="-15"
+                        cy="-30"
+                        rx="9"
+                        ry="9"
+                    />
+
+                    <path
+                        d="M-24 -20 Q-25 10 -35 40 Q-5 40 -5 -20Z"
+                    />
+
+                    <ellipse
+                        cx="15"
+                        cy="-30"
+                        rx="9"
+                        ry="9"
+                    />
+
+                    <path
+                        d="M6 -20 Q5 10 25 40 Q35 40 24 -20Z"
+                    />
+
+                    <path
+                        d="M-5 0 Q0 5 5 0"
+                        stroke="#d4aa70"
+                        stroke-width="2"
+                        fill="none"
+                    />
+
+                </g>
+
+
+                <circle
+                    cx="500"
+                    cy="30"
+                    r="25"
+                    fill="rgba(212,170,112,0.15)"
+                />
+
+                <circle
+                    cx="500"
+                    cy="30"
+                    r="18"
+                    fill="rgba(212,170,112,0.1)"
+                />
+
+            </svg>
+
+
+
+            <div class="container footer-content">
+
+
+                <span class="section-label">
+
+                    With Love
+
+                </span>
+
+
+                <div class="divider">
+
+                    <span>✦</span>
+
+                </div>
+
+
+                <p class="footer-msg">
+
+                    “Your gracious presence and blessings
+                    will greatly enhance our joy on this
+                    auspicious occasion.”
+
+                </p>
+
+
+                <div class="footer-names">
+
+                    A.C.S. Allfred
+                    &amp;
+                    A.J.K. Verginia Keerthi
+
+                </div>
+
+
+                <div class="footer-date">
+
+                    02
+                    &nbsp;
+                    September
+                    &nbsp;
+                    2026
+
+                </div>
+
+
+                <br>
+                <br>
+
+
+                <p class="creator">
+
+                    Made by: Justin Cruz
+
+                    &nbsp;|&nbsp;
+
+
+                    <a
+                        href="https://www.instagram.com/cruxxz.__"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        📸 @cruxxz.__
+
+                    </a>
+
+
+                    &nbsp;|&nbsp;
+
+
+                    <a href="tel:+917418006223">
+
+                        📞 +91 7418006223
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="script.js"></script>
 
 </body>
