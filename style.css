@@ -1,6 +1,6 @@
 /* =========================================================
-   RESET & GLOBAL SETTINGS
-   ========================================================= */
+   RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -22,167 +22,52 @@ body {
 
 
 /* =========================================================
-   STARFIELD BACKGROUND
-   ========================================================= */
+   COVER SCREEN
+========================================================= */
 
-#starfield {
+#coverScreen {
     position: fixed;
     inset: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   COMMON SECTION SETTINGS
-   ========================================================= */
-
-section {
-    position: relative;
-    z-index: 1;
-}
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    padding: 0 1.5rem;
-}
-
-
-/* =========================================================
-   DIVIDER
-   ========================================================= */
-
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 0.75rem;
-    margin: 1.6rem 0;
-
-    opacity: 0.7;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-
-    flex: 1;
-    max-width: 120px;
-    height: 1px;
-
-    background: linear-gradient(
-        to right,
-        transparent,
-        #d4aa70
-    );
-}
-
-.divider::after {
-    background: linear-gradient(
-        to left,
-        transparent,
-        #d4aa70
-    );
-}
-
-.divider span {
-    color: #d4aa70;
-}
-
-
-/* =========================================================
-   SECTION LABEL
-   ========================================================= */
-
-.section-label {
-    display: block;
-
-    text-align: center;
-
-    font-size: 0.68rem;
-    font-weight: 700;
-
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-
-    color: #d4aa70;
-}
-
-
-/* =========================================================
-   FADE-IN ANIMATION
-   ========================================================= */
-
-.fade-in {
-    opacity: 0;
-
-    transform: translateY(28px);
-
-    transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* =========================================================
-   =========================================================
-   WEDDING COVER / OPENING SCREEN
-   =========================================================
-   ========================================================= */
-
-#wedding-cover {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     text-align: center;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding: 2rem 1.5rem;
 
     overflow: hidden;
 
     background:
         radial-gradient(
-            ellipse 80% 70% at 50% 35%,
-            rgba(20, 40, 95, 0.95),
+            ellipse 80% 60% at 50% 35%,
+            rgba(20, 40, 90, 0.95),
             transparent 75%
         ),
         #050d1f;
 
     transition:
-        opacity 1s ease,
-        visibility 1s ease;
+        opacity 0.9s ease,
+        visibility 0.9s ease;
 }
 
 
-/* Cover disappears */
+/* Cover hidden after opening */
 
-#wedding-cover.hide-cover {
+#coverScreen.cover-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
 
-/* Cover decorative moon */
+/* Decorative moon */
 
 .cover-moon {
     position: absolute;
@@ -200,41 +85,25 @@ section {
     background:
         radial-gradient(
             circle,
-            rgba(212, 170, 112, 0.20),
-            rgba(212, 170, 112, 0.08) 35%,
-            transparent 70%
+            rgba(212, 170, 112, 0.14),
+            transparent 68%
         );
 
-    filter: blur(12px);
+    filter: blur(18px);
 
-    animation:
-        coverMoonPulse 4s ease-in-out infinite;
+    animation: coverPulse 4s ease-in-out infinite;
+
+    pointer-events: none;
 }
 
 
-/* Cover content */
-
-.cover-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: 100%;
-    max-width: 850px;
-
-    padding: 2rem 1.5rem;
-
-    animation:
-        coverContentAppear 1.5s ease both;
-}
-
-
-/* Small blessing text */
+/* Small blessing */
 
 .cover-blessing {
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 
-    font-family: "Lato", sans-serif;
+    margin-bottom: 1rem;
 
     font-size: 0.72rem;
 
@@ -243,40 +112,50 @@ section {
     text-transform: uppercase;
 
     color: #f4a8c0;
+
+    animation: coverDown 1.2s ease both;
 }
 
 
 /* Cover title */
 
 .cover-title {
+    position: relative;
+    z-index: 2;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(
         2rem,
-        5vw,
-        3.3rem
+        6vw,
+        3.5rem
     );
 
     font-weight: 300;
 
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
 
     text-transform: uppercase;
 
     color: #f0d29a;
 
     text-shadow:
-        0 0 25px rgba(212, 170, 112, 0.35);
+        0 0 30px rgba(212, 170, 112, 0.3);
+
+    animation: coverDown 1.2s 0.15s ease both;
 }
 
 
-/* Cover gold line */
+/* Cover line */
 
 .cover-line {
-    width: 90px;
+    position: relative;
+    z-index: 2;
+
+    width: 100px;
     height: 1px;
 
-    margin: 1.5rem auto;
+    margin: 1.4rem auto;
 
     background:
         linear-gradient(
@@ -286,224 +165,355 @@ section {
             transparent
         );
 
-    animation:
-        coverLineGrow 1.5s 0.5s ease both;
+    animation: coverWiden 1.4s 0.3s ease both;
 }
 
 
-/* Couple names on cover */
+/* Couple names */
 
 .cover-names {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     font-family: "Dancing Script", cursive;
 
     font-size: clamp(
         3rem,
         9vw,
-        6rem
+        5.5rem
     );
-
-    font-weight: 500;
 
     line-height: 1.15;
 
     color: #ffffff;
 
     text-shadow:
-        0 0 25px rgba(212, 170, 112, 0.45),
-        0 0 55px rgba(212, 170, 112, 0.20);
+        0 0 30px rgba(212, 170, 112, 0.4),
+        0 0 60px rgba(212, 170, 112, 0.2);
 
-    animation:
-        coverNamesAppear 1.5s 0.4s ease both;
+    animation: coverUp 1.4s 0.4s ease both;
 }
 
 
-/* Cover ampersand */
+/* Ampersand */
 
 .cover-amp {
-    display: block;
-
-    margin: 0.2rem 0;
+    margin: 0.1rem 0;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(
         2rem,
         6vw,
-        4rem
+        3.5rem
     );
-
-    font-weight: 300;
 
     color: #d4aa70;
 }
 
 
-/* Cover date */
+/* Date */
 
 .cover-date {
-    margin-top: 1.5rem;
+    position: relative;
+    z-index: 2;
 
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(
-        1rem,
-        3vw,
-        1.25rem
-    );
-
-    letter-spacing: 0.22em;
-
-    color: rgba(253, 248, 240, 0.75);
-
-    text-transform: uppercase;
-}
-
-
-/* Cover invitation text */
-
-.cover-subtitle {
     margin-top: 1.2rem;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(
-        1rem,
-        2.5vw,
-        1.25rem
-    );
+    font-size: 1rem;
 
-    font-style: italic;
+    letter-spacing: 0.25em;
 
-    color: rgba(253, 248, 240, 0.72);
+    text-transform: uppercase;
+
+    color: rgba(253, 248, 240, 0.65);
+
+    animation: coverUp 1.2s 0.6s ease both;
 }
 
 
-/* Enter button */
+/* =========================================================
+   OPEN INVITATION BUTTON
+========================================================= */
 
-.cover-button {
+.open-button {
+    position: relative;
+    z-index: 2;
+
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
+    gap: 0.7rem;
+
     margin-top: 2.2rem;
 
-    padding: 0.9rem 2.2rem;
+    padding: 1rem 2rem;
+
+    min-width: 210px;
 
     border: 1px solid rgba(212, 170, 112, 0.7);
 
     border-radius: 50px;
 
     background:
-        rgba(212, 170, 112, 0.08);
+        linear-gradient(
+            135deg,
+            rgba(212, 170, 112, 0.2),
+            rgba(244, 168, 192, 0.08)
+        );
 
     color: #f0d29a;
 
-    font-family: "Lato", sans-serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 0.72rem;
+    font-size: 1.05rem;
 
-    font-weight: 700;
-
-    letter-spacing: 0.25em;
-
-    text-transform: uppercase;
+    letter-spacing: 0.12em;
 
     cursor: pointer;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-}
-
-.cover-button:hover {
-    background: #d4aa70;
-
-    color: #050d1f;
-
-    transform: translateY(-3px);
+    backdrop-filter: blur(10px);
 
     box-shadow:
-        0 0 25px rgba(212, 170, 112, 0.35);
+        0 0 25px rgba(212, 170, 112, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        buttonAppear 1.2s 0.8s ease both,
+        buttonGlow 2.5s 2s ease-in-out infinite;
 }
 
-.cover-button:active {
-    transform: translateY(0);
+
+.open-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 170, 112, 0.32),
+            rgba(244, 168, 192, 0.12)
+        );
+
+    box-shadow:
+        0 0 35px rgba(212, 170, 112, 0.3);
 }
 
 
-/* Small bottom text */
+.open-button:active {
+    transform: scale(0.96);
+}
 
-.cover-bottom {
-    margin-top: 2rem;
 
-    font-size: 0.62rem;
+.button-icon {
+    font-size: 1.3rem;
 
-    letter-spacing: 0.18em;
+    color: #f4a8c0;
+}
+
+
+/* Hint */
+
+.cover-hint {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 0.9rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
 
     text-transform: uppercase;
 
     color: rgba(253, 248, 240, 0.35);
+
+    animation: buttonAppear 1.2s 1s ease both;
 }
 
 
 /* =========================================================
-   COVER DECORATIVE ORNAMENTS
-   ========================================================= */
+   MAIN WEBSITE
+========================================================= */
 
-.cover-ornament {
-    position: absolute;
+#weddingWebsite {
+    position: relative;
 
-    width: 180px;
-    height: 180px;
+    min-height: 100vh;
 
-    border: 1px solid rgba(212, 170, 112, 0.15);
+    opacity: 1;
 
-    border-radius: 50%;
+    transition:
+        opacity 1s ease;
+}
+
+
+.website-hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+
+.website-visible {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+}
+
+
+/* =========================================================
+   STARFIELD
+========================================================= */
+
+#starfield {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
 
     pointer-events: none;
 }
 
-.cover-ornament::before {
-    content: "";
 
-    position: absolute;
+/* =========================================================
+   COMMON SECTION
+========================================================= */
 
-    inset: 15px;
-
-    border: 1px solid rgba(244, 168, 192, 0.12);
-
-    border-radius: 50%;
+section {
+    position: relative;
+    z-index: 1;
 }
 
-.cover-ornament.left {
-    left: -80px;
-    top: 50%;
 
-    transform: translateY(-50%);
-}
+.container {
+    width: 100%;
+    max-width: 900px;
 
-.cover-ornament.right {
-    right: -80px;
-    top: 50%;
+    margin: auto;
 
-    transform: translateY(-50%);
+    padding: 0 1.5rem;
 }
 
 
 /* =========================================================
-   HERO SECTION
-   ========================================================= */
+   DIVIDER
+========================================================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    margin: 1.6rem 0;
+
+    opacity: 0.7;
+}
+
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    max-width: 120px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #d4aa70
+        );
+}
+
+
+.divider::after {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #d4aa70
+        );
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.section-label {
+    display: block;
+
+    text-align: center;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+    color: #d4aa70;
+}
+
+
+/* =========================================================
+   FADE
+========================================================= */
+
+.fade-in {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.fade-in.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 #hero {
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -520,8 +530,6 @@ section {
     overflow: hidden;
 }
 
-
-/* Moon glow */
 
 .moon-glow {
     position: absolute;
@@ -545,12 +553,9 @@ section {
 
     filter: blur(20px);
 
-    animation:
-        pulse 4s ease-in-out infinite;
+    animation: pulse 4s ease-in-out infinite;
 }
 
-
-/* Join Us text */
 
 .join-label {
     margin-bottom: 0.8rem;
@@ -563,12 +568,9 @@ section {
 
     color: #f4a8c0;
 
-    animation:
-        fadeDown 1.2s ease both;
+    animation: fadeDown 1.2s ease both;
 }
 
-
-/* Wedding Invitation heading */
 
 .invite-title {
     font-family: "Cormorant Garamond", serif;
@@ -587,15 +589,13 @@ section {
 
     color: #f0d29a;
 
-    animation:
-        fadeDown 1.2s 0.15s ease both;
+    animation: fadeDown 1.2s 0.15s ease both;
 }
 
 
-/* Gold line */
-
 .gold-line {
     width: 80px;
+
     height: 1px;
 
     margin: 1.2rem auto;
@@ -608,20 +608,21 @@ section {
             transparent
         );
 
-    animation:
-        widen 1.5s 0.3s ease both;
+    animation: widen 1.5s 0.3s ease both;
 }
 
 
 /* =========================================================
-   COUPLE NAMES
-   ========================================================= */
+   NAMES
+========================================================= */
 
 .names,
 .footer-names {
     font-family: "Dancing Script", cursive !important;
+
     font-weight: 400;
 }
+
 
 .names {
     font-size: clamp(
@@ -638,12 +639,9 @@ section {
         0 0 30px rgba(212, 170, 112, 0.4),
         0 0 60px rgba(212, 170, 112, 0.2);
 
-    animation:
-        fadeUp 1.4s 0.4s ease both;
+    animation: fadeUp 1.4s 0.4s ease both;
 }
 
-
-/* Ampersand */
 
 .amp {
     display: block;
@@ -662,7 +660,7 @@ section {
 
 /* =========================================================
    HERO TEXT
-   ========================================================= */
+========================================================= */
 
 .tagline,
 .invitation-text {
@@ -671,8 +669,6 @@ section {
     line-height: 1.8;
 }
 
-
-/* Romantic tagline */
 
 .tagline {
     max-width: 650px;
@@ -689,9 +685,9 @@ section {
 
     color: rgba(253, 248, 240, 0.82);
 
-    animation:
-        fadeUp 1.4s 0.6s ease both;
+    animation: fadeUp 1.4s 0.6s ease both;
 }
+
 
 .tagline span {
     color: #f4a8c0;
@@ -699,8 +695,6 @@ section {
     font-size: 0.9em;
 }
 
-
-/* Invitation paragraph */
 
 .invitation-text {
     max-width: 720px;
@@ -715,14 +709,13 @@ section {
 
     color: rgba(253, 248, 240, 0.72);
 
-    animation:
-        fadeUp 1.4s 0.8s ease both;
+    animation: fadeUp 1.4s 0.8s ease both;
 }
 
 
 /* =========================================================
-   COUNTDOWN & CALENDAR
-   ========================================================= */
+   COUNTDOWN / CALENDAR
+========================================================= */
 
 #countdown,
 #calendar {
@@ -740,8 +733,6 @@ section {
 }
 
 
-/* Countdown container */
-
 .countdown-grid {
     display: flex;
 
@@ -755,18 +746,14 @@ section {
 }
 
 
-/* Countdown box */
-
 .countdown-box {
     min-width: 90px;
 
     padding: 1.2rem 1.6rem;
 
-    background:
-        rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.04);
 
-    border:
-        1px solid rgba(212, 170, 112, 0.25);
+    border: 1px solid rgba(212, 170, 112, 0.25);
 
     border-radius: 12px;
 
@@ -778,6 +765,7 @@ section {
     transition: 0.3s;
 }
 
+
 .countdown-box:hover {
     transform: translateY(-4px);
 
@@ -785,8 +773,6 @@ section {
         0 0 30px rgba(212, 170, 112, 0.18);
 }
 
-
-/* Countdown number */
 
 .num {
     font-family: "Cormorant Garamond", serif;
@@ -800,8 +786,6 @@ section {
     color: #f0d29a;
 }
 
-
-/* Countdown label */
 
 .lbl {
     margin-top: 0.35rem;
@@ -818,7 +802,7 @@ section {
 
 /* =========================================================
    FAMILY / EVENTS / VENUE / RECEPTION
-   ========================================================= */
+========================================================= */
 
 #family,
 #events,
@@ -827,8 +811,6 @@ section {
     padding: 5rem 1.5rem;
 }
 
-
-/* Two-column layouts */
 
 .family-grid,
 .venue-grid {
@@ -842,17 +824,13 @@ section {
 }
 
 
-/* Common cards */
-
 .family-card,
 .event-card,
 .venue-card,
 .reception-box {
-    background:
-        rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03);
 
-    border:
-        1px solid rgba(212, 170, 112, 0.2);
+    border: 1px solid rgba(212, 170, 112, 0.2);
 
     border-radius: 20px;
 
@@ -861,14 +839,15 @@ section {
 
 
 /* =========================================================
-   FAMILY CARDS
-   ========================================================= */
+   FAMILY
+========================================================= */
 
 .family-card {
     padding: 2rem;
 
     text-align: center;
 }
+
 
 .family-label,
 .event-type,
@@ -882,9 +861,11 @@ section {
     color: #f4a8c0;
 }
 
+
 .family-label {
     margin-bottom: 1rem;
 }
+
 
 .family-card h2 {
     margin: 0.3rem 0;
@@ -898,6 +879,7 @@ section {
     color: #f0d29a;
 }
 
+
 .family-card > p:last-child {
     margin-top: 0.8rem;
 
@@ -906,8 +888,8 @@ section {
 
 
 /* =========================================================
-   SECTION TITLES
-   ========================================================= */
+   SECTION TITLE
+========================================================= */
 
 .section-title {
     font-family: "Great Vibes", cursive;
@@ -930,8 +912,8 @@ section {
 
 
 /* =========================================================
-   WEDDING EVENT CARD
-   ========================================================= */
+   EVENT
+========================================================= */
 
 .single-event {
     max-width: 620px;
@@ -948,14 +930,10 @@ section {
 }
 
 
-/* Event type */
-
 .event-type {
     margin-bottom: 0.8rem;
 }
 
-
-/* Large date */
 
 .big-date {
     font-family: "Cormorant Garamond", serif;
@@ -973,8 +951,6 @@ section {
 }
 
 
-/* Month and year */
-
 .month-year {
     font-family: "Cormorant Garamond", serif;
 
@@ -986,12 +962,8 @@ section {
 }
 
 
-/* Day */
-
 .day-name {
-    margin:
-        0.3rem 0
-        1.4rem;
+    margin: 0.3rem 0 1.4rem;
 
     font-size: 0.75rem;
 
@@ -1002,8 +974,6 @@ section {
     color: rgba(253, 248, 240, 0.55);
 }
 
-
-/* Event information */
 
 .info-row {
     display: flex;
@@ -1024,8 +994,6 @@ section {
 }
 
 
-/* Bishop information */
-
 .bishop {
     margin-top: 1.8rem;
 
@@ -1040,9 +1008,11 @@ section {
     color: rgba(253, 248, 240, 0.72);
 }
 
+
 .bishop strong {
     color: #f0d29a;
 }
+
 
 .bishop span {
     font-size: 0.9em;
@@ -1053,29 +1023,26 @@ section {
 
 /* =========================================================
    CALENDAR
-   ========================================================= */
+========================================================= */
 
 .cal-widget {
     display: inline-block;
 
     width: 100%;
+
     max-width: 380px;
 
     padding: 2rem;
 
-    background:
-        rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03);
 
-    border:
-        1px solid rgba(212, 170, 112, 0.22);
+    border: 1px solid rgba(212, 170, 112, 0.22);
 
     border-radius: 20px;
 
     backdrop-filter: blur(10px);
 }
 
-
-/* Calendar heading */
 
 .cal-header {
     margin-bottom: 1.2rem;
@@ -1090,19 +1057,14 @@ section {
 }
 
 
-/* Calendar grid */
-
 .cal-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 
     gap: 4px;
 }
 
-
-/* Weekday names */
 
 .cal-day-name {
     padding: 0.3rem 0;
@@ -1119,14 +1081,13 @@ section {
 }
 
 
-/* Calendar date */
-
 .cal-day {
     aspect-ratio: 1;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-family: "Cormorant Garamond", serif;
@@ -1138,12 +1099,11 @@ section {
     border-radius: 50%;
 }
 
+
 .cal-day.empty {
     opacity: 0;
 }
 
-
-/* Wedding date */
 
 .cal-day.highlighted {
     background: #d4aa70;
@@ -1160,8 +1120,6 @@ section {
 }
 
 
-/* Calendar legend */
-
 .cal-legend {
     display: flex;
 
@@ -1174,6 +1132,7 @@ section {
     color: rgba(253, 248, 240, 0.6);
 }
 
+
 .cal-legend span {
     display: flex;
 
@@ -1182,8 +1141,6 @@ section {
     gap: 0.4rem;
 }
 
-
-/* Legend dot */
 
 .dot {
     display: inline-block;
@@ -1194,14 +1151,15 @@ section {
     border-radius: 50%;
 }
 
+
 .dot-gold {
     background: #d4aa70;
 }
 
 
 /* =========================================================
-   VENUE SECTION
-   ========================================================= */
+   VENUE
+========================================================= */
 
 .venue-card {
     overflow: hidden;
@@ -1211,17 +1169,17 @@ section {
     transition: 0.35s;
 }
 
+
 .venue-card:hover {
     transform: translateY(-5px);
 }
 
 
-/* Map */
-
 .map-wrapper {
     width: 100%;
     height: 210px;
 }
+
 
 .map-wrapper iframe {
     width: 100%;
@@ -1236,15 +1194,15 @@ section {
 }
 
 
-/* Venue information */
-
 .venue-info {
     padding: 1.4rem 1.4rem 1.6rem;
 }
 
+
 .venue-type {
     margin-bottom: 0.4rem;
 }
+
 
 .venue-info h3 {
     margin-bottom: 0.5rem;
@@ -1258,6 +1216,7 @@ section {
     color: #f0d29a;
 }
 
+
 .venue-info p {
     font-size: 0.83rem;
 
@@ -1268,8 +1227,8 @@ section {
 
 
 /* =========================================================
-   RECEPTION SECTION
-   ========================================================= */
+   RECEPTION
+========================================================= */
 
 .reception-box {
     max-width: 760px;
@@ -1280,6 +1239,7 @@ section {
 
     text-align: center;
 }
+
 
 .reception-box p {
     margin-top: 1.5rem;
@@ -1293,6 +1253,7 @@ section {
     color: rgba(253, 248, 240, 0.75);
 }
 
+
 .reception-box strong {
     color: #f0d29a;
 }
@@ -1300,7 +1261,7 @@ section {
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
 #footer {
     position: relative;
@@ -1320,8 +1281,6 @@ section {
 }
 
 
-/* Cityscape */
-
 .cityscape {
     position: absolute;
 
@@ -1339,16 +1298,12 @@ section {
 }
 
 
-/* Footer content */
-
 .footer-content {
     position: relative;
 
     z-index: 2;
 }
 
-
-/* Footer message */
 
 .footer-msg {
     max-width: 600px;
@@ -1371,8 +1326,6 @@ section {
 }
 
 
-/* Footer couple names */
-
 .footer-names {
     font-size: clamp(
         2rem,
@@ -1387,8 +1340,6 @@ section {
 }
 
 
-/* Footer date */
-
 .footer-date {
     margin-top: 0.5rem;
 
@@ -1402,10 +1353,6 @@ section {
 }
 
 
-/* =========================================================
-   CREATOR / CONTACT
-   ========================================================= */
-
 .creator {
     font-size: 0.7rem;
 
@@ -1414,11 +1361,13 @@ section {
     color: rgba(253, 248, 240, 0.3);
 }
 
+
 .creator a {
     color: #f4a8c0;
 
     text-decoration: none;
 }
+
 
 .creator a:hover {
     color: #f0d29a;
@@ -1427,7 +1376,93 @@ section {
 
 /* =========================================================
    ANIMATIONS
-   ========================================================= */
+========================================================= */
+
+@keyframes coverDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes coverUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes coverWiden {
+
+    from {
+        opacity: 0;
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 100px;
+    }
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes buttonGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 20px rgba(212, 170, 112, 0.12);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px rgba(212, 170, 112, 0.28);
+    }
+}
+
+
+@keyframes coverPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.08);
+    }
+}
+
 
 @keyframes fadeDown {
 
@@ -1471,71 +1506,6 @@ section {
 }
 
 
-/* Cover animations */
-
-@keyframes coverContentAppear {
-
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes coverNamesAppear {
-
-    from {
-        opacity: 0;
-        transform: scale(0.92);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-
-@keyframes coverLineGrow {
-
-    from {
-        opacity: 0;
-        width: 0;
-    }
-
-    to {
-        opacity: 1;
-        width: 90px;
-    }
-}
-
-
-@keyframes coverMoonPulse {
-
-    0%,
-    100% {
-        transform:
-            translateX(-50%)
-            scale(1);
-
-        opacity: 0.8;
-    }
-
-    50% {
-        transform:
-            translateX(-50%)
-            scale(1.12);
-
-        opacity: 1;
-    }
-}
-
-
 @keyframes pulse {
 
     0%,
@@ -1550,88 +1520,71 @@ section {
 
 
 /* =========================================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================================= */
+   MOBILE
+========================================================= */
 
 @media (max-width: 650px) {
 
-    /* Cover */
-
-    .cover-content {
+    #coverScreen {
         padding:
-            1.5rem
-            1.2rem;
+            1.5rem 1.2rem;
     }
+
 
     .cover-blessing {
         font-size: 0.58rem;
 
-        letter-spacing: 0.2em;
+        letter-spacing: 0.18em;
     }
+
 
     .cover-title {
-        font-size: 1.7rem;
+        font-size: clamp(
+            1.6rem,
+            8vw,
+            2.4rem
+        );
 
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
     }
+
 
     .cover-names {
         font-size: clamp(
             2.7rem,
             13vw,
-            4.5rem
+            4rem
         );
     }
 
-    .cover-amp {
-        font-size: 2.3rem;
 
-        margin: 0;
+    .cover-amp {
+        font-size: 2rem;
     }
 
+
     .cover-date {
-        font-size: 0.85rem;
+        font-size: 0.78rem;
 
         letter-spacing: 0.15em;
     }
 
-    .cover-subtitle {
+
+    .open-button {
+        min-width: 190px;
+
+        padding:
+            0.9rem 1.5rem;
+
         font-size: 1rem;
     }
 
-    .cover-button {
-        margin-top: 1.7rem;
-
-        padding:
-            0.8rem
-            1.7rem;
-
-        font-size: 0.62rem;
-    }
-
-    .cover-ornament {
-        width: 120px;
-        height: 120px;
-    }
-
-    .cover-ornament.left {
-        left: -65px;
-    }
-
-    .cover-ornament.right {
-        right: -65px;
-    }
-
-
-    /* Family and venue */
 
     .family-grid,
     .venue-grid {
         grid-template-columns: 1fr;
     }
 
-
-    /* Couple names */
 
     .names {
         font-size: clamp(
@@ -1642,42 +1595,39 @@ section {
     }
 
 
-    /* Countdown */
-
     .countdown-grid {
         gap: 0.7rem;
     }
+
 
     .countdown-box {
         min-width: 72px;
 
         padding:
-            1rem
-            0.8rem;
+            1rem 0.8rem;
     }
+
 
     .num {
         font-size: 2.2rem;
     }
 
 
-    /* Calendar */
-
     .cal-widget {
         padding: 1.2rem;
     }
 
 
-    /* Event card */
-
     .single-event {
         padding:
-            2rem
-            1.2rem;
+            2rem 1.2rem;
     }
 
 
-    /* Footer */
+    .big-date {
+        font-size: 4.5rem;
+    }
+
 
     .footer-names {
         font-size: 2rem;
@@ -1687,35 +1637,32 @@ section {
 
 /* =========================================================
    VERY SMALL MOBILE DEVICES
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 380px) {
-
-    .cover-title {
-        font-size: 1.45rem;
-    }
 
     .cover-names {
         font-size: 2.5rem;
     }
 
-    .cover-date {
-        font-size: 0.72rem;
+
+    .cover-title {
+        font-size: 1.5rem;
     }
 
-    .cover-button {
-        padding:
-            0.75rem
-            1.4rem;
+
+    .open-button {
+        min-width: 175px;
     }
+
 
     .countdown-box {
         min-width: 65px;
 
         padding:
-            0.8rem
-            0.5rem;
+            0.8rem 0.5rem;
     }
+
 
     .num {
         font-size: 1.9rem;
@@ -1724,8 +1671,8 @@ section {
 
 
 /* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
+   REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1733,6 +1680,7 @@ section {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
 
         scroll-behavior: auto !important;
