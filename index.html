@@ -2,116 +2,74 @@
 <html lang="en">
 
 <head>
-
-    <!-- =====================================================
-         BASIC PAGE SETTINGS
-    ====================================================== -->
-
-    <!-- Character encoding -->
     <meta charset="UTF-8">
 
-    <!-- Makes the website responsive on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Website description -->
     <meta
         name="description"
         content="Wedding Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi"
     >
 
-    <!-- Browser tab title -->
-    <title>
-        Wedding Invitation – Allfred & Verginia Keerthi
-    </title>
+    <title>Wedding Invitation – Allfred & Verginia Keerthi</title>
 
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <!-- Improve Google Fonts loading -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <!-- Wedding invitation fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet"
     >
 
-
-    <!-- =====================================================
-         CSS FILE
-    ====================================================== -->
-
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
-         STAR BACKGROUND
-         
-         JavaScript uses this canvas to create the
-         animated stars.
-    ====================================================== -->
-
+    <!-- Star background -->
     <canvas id="starfield"></canvas>
 
+    <!-- =====================================================
+         BACKGROUND MUSIC
+    ====================================================== -->
 
     <audio
         id="weddingSong"
-        src="Vallavan_bgm.music(256k).mp3.mpeg"
         autoplay
         loop
         preload="auto"
-    ></audio> 
+        playsinline
+    >
+        <source
+            src="Vallavan_bgm.music(256k).mp3.mpeg"
+            type="audio/mpeg"
+        >
 
+        Your browser does not support the audio element.
+    </audio>
 
 
     <!-- =====================================================
-         HERO / INTRODUCTION SECTION
+         HERO
     ====================================================== -->
 
     <section id="hero">
 
-        <!-- Decorative moon glow -->
         <div class="moon-glow"></div>
-
-
-        <!-- Blessing text -->
 
         <p class="join-label">
             ✦ With the Blessings of Almighty God ✦
         </p>
 
-
-        <!-- Main title -->
-
         <h1 class="invite-title">
             Wedding Invitation
         </h1>
 
-
-        <!-- Decorative gold line -->
-
         <div class="gold-line"></div>
 
-
-        <!-- =================================================
-             BRIDE AND GROOM NAMES
-        ================================================== -->
-
         <div class="names">
-
             A.C.S. Allfred
 
             <span class="amp">
@@ -119,14 +77,9 @@
             </span>
 
             A.J.K. Verginia Keerthi
-
         </div>
 
-
-        <!-- Bible verse -->
-
         <p class="tagline">
-
             “What God has joined together,
             let no one separate.”
 
@@ -135,132 +88,56 @@
             <span>
                 — Mark 10:9
             </span>
-
         </p>
 
-
-        <!-- Invitation message -->
-
         <p class="invitation-text">
-
             With the abundant blessings of Almighty God
             and the loving prayers of our beloved
             grandparents and family members,
             we cordially invite you to grace the wedding
             ceremony of our beloved children with your
             esteemed presence and blessings.
-
         </p>
 
     </section>
 
 
-
     <!-- =====================================================
-         COUNTDOWN SECTION
+         COUNTDOWN
     ====================================================== -->
 
-    <section
-        id="countdown"
-        class="fade-in"
-    >
+    <section id="countdown" class="fade-in">
 
         <div class="container">
-
-
-            <!-- Section heading -->
 
             <span class="section-label">
                 Counting down to the wedding day
             </span>
 
-
-            <!-- Decorative divider -->
-
             <div class="divider">
                 <span>✦</span>
             </div>
 
-
-            <!-- =================================================
-                 COUNTDOWN BOXES
-                 
-                 JavaScript changes the numbers inside these
-                 elements.
-            ================================================== -->
-
             <div class="countdown-grid">
 
-
-                <!-- DAYS -->
-
                 <div class="countdown-box">
-
-                    <div
-                        class="num"
-                        id="cdDays"
-                    >
-                        --
-                    </div>
-
-                    <div class="lbl">
-                        Days
-                    </div>
-
+                    <div class="num" id="cdDays">--</div>
+                    <div class="lbl">Days</div>
                 </div>
 
-
-                <!-- HOURS -->
-
                 <div class="countdown-box">
-
-                    <div
-                        class="num"
-                        id="cdHours"
-                    >
-                        --
-                    </div>
-
-                    <div class="lbl">
-                        Hours
-                    </div>
-
+                    <div class="num" id="cdHours">--</div>
+                    <div class="lbl">Hours</div>
                 </div>
 
-
-                <!-- MINUTES -->
-
                 <div class="countdown-box">
-
-                    <div
-                        class="num"
-                        id="cdMins"
-                    >
-                        --
-                    </div>
-
-                    <div class="lbl">
-                        Minutes
-                    </div>
-
+                    <div class="num" id="cdMins">--</div>
+                    <div class="lbl">Minutes</div>
                 </div>
 
-
-                <!-- SECONDS -->
-
                 <div class="countdown-box">
-
-                    <div
-                        class="num"
-                        id="cdSecs"
-                    >
-                        --
-                    </div>
-
-                    <div class="lbl">
-                        Seconds
-                    </div>
-
+                    <div class="num" id="cdSecs">--</div>
+                    <div class="lbl">Seconds</div>
                 </div>
 
             </div>
@@ -270,43 +147,23 @@
     </section>
 
 
-
     <!-- =====================================================
-         FAMILY SECTION
+         FAMILY
     ====================================================== -->
 
-    <section
-        id="family"
-        class="fade-in"
-    >
+    <section id="family" class="fade-in">
 
         <div class="container">
-
-
-            <!-- Section title -->
 
             <span class="section-label">
                 With the blessings of our families
             </span>
 
-
-            <!-- Divider -->
-
             <div class="divider">
                 <span>♡</span>
             </div>
 
-
-            <!-- =================================================
-                 FAMILY CARDS
-            ================================================== -->
-
             <div class="family-grid">
-
-
-                <!-- =================================================
-                     BRIDE'S FAMILY
-                ================================================== -->
 
                 <div class="family-card">
 
@@ -314,11 +171,9 @@
                         Bride's Family
                     </p>
 
-
                     <h2>
                         Mrs. Cecilly Charles
                     </h2>
-
 
                     <p>
                         Coimbatore
@@ -327,27 +182,19 @@
                 </div>
 
 
-
-                <!-- =================================================
-                     GROOM'S FAMILY
-                ================================================== -->
-
                 <div class="family-card">
 
                     <p class="family-label">
                         Groom's Family
                     </p>
 
-
                     <h2>
                         Mr. G. Anthonyswamy Jaikumar
                     </h2>
 
-
                     <h2>
                         Mrs. A.J.K. Irudaya Catherine
                     </h2>
-
 
                     <p>
                         Bengaluru
@@ -362,121 +209,62 @@
     </section>
 
 
-
     <!-- =====================================================
-         WEDDING CEREMONY SECTION
+         WEDDING CEREMONY
     ====================================================== -->
 
-    <section
-        id="events"
-        class="fade-in"
-    >
+    <section id="events" class="fade-in">
 
         <div class="container">
-
-
-            <!-- Section label -->
 
             <span class="section-label">
                 The Wedding Ceremony
             </span>
 
-
-            <!-- Divider -->
-
             <div class="divider">
                 <span>✦</span>
             </div>
-
-
-            <!-- Main section title -->
 
             <h2 class="section-title">
                 Holy Matrimony
             </h2>
 
-
-            <!-- =================================================
-                 WEDDING EVENT CARD
-            ================================================== -->
-
             <div class="event-card single-event">
-
-
-                <!-- Event type -->
 
                 <p class="event-type">
                     ✿ Wedding Day ✿
                 </p>
 
-
-                <!-- Wedding date -->
-
                 <div class="big-date">
                     02
                 </div>
-
 
                 <div class="month-year">
                     September 2026
                 </div>
 
-
                 <div class="day-name">
                     Wednesday
                 </div>
-
-
-                <!-- Divider -->
 
                 <div class="divider">
                     <span>♡</span>
                 </div>
 
-
-                <!-- =================================================
-                     WEDDING TIME
-                ================================================== -->
-
                 <div class="info-row">
-
-                    <span>
-                        🕘
-                    </span>
-
-                    <span>
-                        9:30 AM
-                    </span>
-
+                    <span>🕘</span>
+                    <span>9:30 AM</span>
                 </div>
 
-
-                <!-- =================================================
-                     WEDDING LOCATION
-                ================================================== -->
-
                 <div class="info-row">
+                    <span>⛪</span>
 
                     <span>
-                        ⛪
-                    </span>
-
-                    <span>
-
                         St. Joseph's Church,
-
                         <br>
-
                         Podanur, Coimbatore
-
                     </span>
-
                 </div>
-
-
-                <!-- =================================================
-                     BISHOP INFORMATION
-                ================================================== -->
 
                 <p class="bishop">
 
@@ -507,79 +295,44 @@
     </section>
 
 
-
     <!-- =====================================================
-         CALENDAR SECTION
+         CALENDAR
     ====================================================== -->
 
-    <section
-        id="calendar"
-        class="fade-in"
-    >
+    <section id="calendar" class="fade-in">
 
         <div class="container">
-
-
-            <!-- Section heading -->
 
             <span class="section-label">
                 Mark your calendar
             </span>
 
-
-            <!-- Divider -->
-
             <div class="divider">
                 <span>✦</span>
             </div>
-
-
-            <!-- Calendar title -->
 
             <h2 class="section-title">
                 September 2026
             </h2>
 
-
             <br>
 
-
-            <!-- =================================================
-                 CALENDAR WIDGET
-                 
-                 JavaScript creates the calendar inside
-                 "calGrid".
-            ================================================== -->
-
             <div class="cal-widget">
-
-
-                <!-- Calendar header -->
 
                 <div class="cal-header">
                     September 2026
                 </div>
 
-
-                <!-- Calendar dates are inserted here -->
-
                 <div
                     class="cal-grid"
                     id="calGrid"
-                >
-                </div>
-
-
-                <!-- Calendar legend -->
+                ></div>
 
                 <div class="cal-legend">
 
                     <span>
-
                         <span class="dot dot-gold"></span>
-
                         Wedding – 2nd
-
                     </span>
 
                 </div>
@@ -591,199 +344,167 @@
     </section>
 
 
-
     <!-- =====================================================
-         VENUE SECTION
-    ====================================================== -->
-<!-- =====================================================
-     MARRIAGE / WEDDING VENUE SECTION
-====================================================== -->
-<section id="venue" class="fade-in">
-
-    <div class="container">
-
-        <span class="section-label">
-            Where love awaits
-        </span>
-
-        <div class="divider">
-            <span>✦</span>
-        </div>
-
-        <!-- Wedding Box -->
-        <div class="reception-box">
-
-            <h2 class="section-title">
-                Wedding Venue
-            </h2>
-
-            <p>
-                We request the honour of your presence at the wedding ceremony at
-
-                <strong>
-                    St. Joseph's Church,
-                    Podanur,
-                    Coimbatore
-                </strong>
-
-                on
-
-                <strong>
-                    02 September 2026 at 9:30 AM
-                </strong>
-            </p>
-
-        </div>
-
-        <!-- Wedding Map Card -->
-        <div class="venue-card fade-in">
-
-            <div class="map-wrapper">
-                <iframe
-                    src="https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-            <div class="venue-info">
-                <p class="venue-type">⛪ Wedding Venue</p>
-
-                <h3>St. Joseph's Church</h3>
-
-                <p>
-                    Podanur,
-                    <br>
-                    Coimbatore
-                </p>
-
-                <p>
-                    02 September 2026 · 9:30 AM
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- =====================================================
-         RECEPTION SECTION
+         WEDDING VENUE
     ====================================================== -->
 
-    <section
-        id="reception"
-        class="fade-in"
-    >
+    <section id="venue" class="fade-in">
 
         <div class="container">
 
+            <span class="section-label">
+                Where love awaits
+            </span>
 
-            <!-- Section heading -->
+            <div class="divider">
+                <span>✦</span>
+            </div>
+
+
+            <div class="reception-box">
+
+                <h2 class="section-title">
+                    Wedding Venue
+                </h2>
+
+                <p>
+                    We request the honour of your presence at
+                    the wedding ceremony at
+
+                    <strong>
+                        St. Joseph's Church,
+                        Podanur,
+                        Coimbatore
+                    </strong>
+
+                    on
+
+                    <strong>
+                        02 September 2026 at 9:30 AM
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="venue-card fade-in">
+
+                <div class="map-wrapper">
+
+                    <iframe
+                        src="https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="St. Joseph's Church, Podanur, Coimbatore">
+                    </iframe>
+
+                </div>
+
+                <div class="venue-info">
+
+                    <p class="venue-type">
+                        ⛪ Wedding Venue
+                    </p>
+
+                    <h3>
+                        St. Joseph's Church
+                    </h3>
+
+                    <p>
+                        Podanur,
+                        <br>
+                        Coimbatore
+                    </p>
+
+                    <p>
+                        02 September 2026 · 9:30 AM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RECEPTION
+    ====================================================== -->
+
+    <section id="reception" class="fade-in">
+
+        <div class="container">
 
             <span class="section-label">
                 And thereafter
             </span>
-
-
-            <!-- Divider -->
 
             <div class="divider">
                 <span>♡</span>
             </div>
 
 
-            <!-- Reception box -->
-
             <div class="reception-box">
-
-
-                <!-- Reception title -->
 
                 <h2 class="section-title">
                     Reception
                 </h2>
 
-
-                <!-- Reception information -->
-
                 <p>
-
                     And thereafter, for the reception at
 
                     <strong>
-
                         Lakshmi Hall,
                         Bharathi Nagar,
                         Podanur Main Road,
                         Coimbatore.
-
                     </strong>
-
                 </p>
 
             </div>
 
-                <!-- =================================================
-                     RECEPTION VENUE
-                ================================================== -->
 
-                <div class="venue-card fade-in">
+            <div class="venue-card fade-in">
 
+                <div class="map-wrapper">
 
-                    <!-- Google Maps -->
+                    <iframe
+                        src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lakshmi Hall, Podanur, Coimbatore">
+                    </iframe>
 
-                    <div class="map-wrapper">
+                </div>
 
-                        <iframe
-                            src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Lakshmi Hall, Podanur, Coimbatore"
-                        >
-                        </iframe>
+                <div class="venue-info">
 
-                    </div>
+                    <p class="venue-type">
+                        🎉 Reception Venue
+                    </p>
 
+                    <h3>
+                        Lakshmi Hall
+                    </h3>
 
-                    <!-- Venue information -->
-
-                    <div class="venue-info">
-
-
-                        <p class="venue-type">
-                            🎉 Reception Venue
-                        </p>
-
-
-                        <h3>
-                            Lakshmi Hall
-                        </h3>
-
-
-                        <p>
-
-                            Bharathi Nagar,
-                            Podanur Main Road,
-
-                            <br>
-
-                            Coimbatore
-
-                        </p>
-
-                    </div>
+                    <p>
+                        Bharathi Nagar,
+                        Podanur Main Road,
+                        <br>
+                        Coimbatore
+                    </p>
 
                 </div>
 
             </div>
+
         </div>
 
     </section>
-
 
 
     <!-- =====================================================
@@ -792,14 +513,6 @@
 
     <section id="footer">
 
-
-        <!-- =================================================
-             DECORATIVE CITYSCAPE
-             
-             This SVG creates the building/city design
-             at the bottom of the page.
-        ================================================== -->
-
         <svg
             class="cityscape"
             viewBox="0 0 1000 260"
@@ -807,73 +520,43 @@
             preserveAspectRatio="xMidYMax meet"
         >
 
-
-            <!-- =================================================
-                 BUILDINGS
-            ================================================== -->
-
             <g fill="#d4aa70">
 
                 <rect x="0" y="180" width="1000" height="80"/>
 
                 <rect x="20" y="140" width="40" height="40"/>
-
                 <rect x="70" y="120" width="50" height="60"/>
-
                 <rect x="130" y="100" width="35" height="80"/>
-
                 <rect x="175" y="130" width="30" height="50"/>
-
                 <rect x="215" y="110" width="55" height="70"/>
-
                 <rect x="280" y="90" width="40" height="90"/>
-
                 <rect x="330" y="120" width="30" height="60"/>
-
                 <rect x="370" y="70" width="45" height="110"/>
-
                 <rect x="430" y="100" width="60" height="80"/>
 
                 <polygon points="460,60 430,100 490,100"/>
 
                 <rect x="453" y="35" width="14" height="30"/>
-
                 <rect x="447" y="52" width="26" height="5"/>
 
                 <rect x="500" y="80" width="45" height="100"/>
-
                 <rect x="555" y="110" width="30" height="70"/>
-
                 <rect x="595" y="90" width="50" height="90"/>
-
                 <rect x="655" y="120" width="35" height="60"/>
-
                 <rect x="700" y="100" width="40" height="80"/>
-
                 <rect x="750" y="130" width="30" height="50"/>
-
                 <rect x="790" y="110" width="50" height="70"/>
-
                 <rect x="850" y="140" width="40" height="40"/>
-
                 <rect x="900" y="120" width="35" height="60"/>
-
                 <rect x="945" y="150" width="55" height="30"/>
 
             </g>
 
 
-
-            <!-- =================================================
-                 BRIDE AND GROOM SILHOUETTE
-            ================================================== -->
-
             <g
                 transform="translate(450,115)"
                 fill="#1a2a5a"
             >
-
-                <!-- Bride head -->
 
                 <ellipse
                     cx="-15"
@@ -882,15 +565,9 @@
                     ry="9"
                 />
 
-
-                <!-- Bride body -->
-
                 <path
                     d="M-24 -20 Q-25 10 -35 40 Q-5 40 -5 -20Z"
                 />
-
-
-                <!-- Groom head -->
 
                 <ellipse
                     cx="15"
@@ -899,15 +576,9 @@
                     ry="9"
                 />
 
-
-                <!-- Groom body -->
-
                 <path
                     d="M6 -20 Q5 10 25 40 Q35 40 24 -20Z"
                 />
-
-
-                <!-- Couple smile / decorative line -->
 
                 <path
                     d="M-5 0 Q0 5 5 0"
@@ -918,11 +589,6 @@
 
             </g>
 
-
-
-            <!-- =================================================
-                 MOON / LIGHT EFFECT
-            ================================================== -->
 
             <circle
                 cx="500"
@@ -941,29 +607,15 @@
         </svg>
 
 
-
-        <!-- =================================================
-             FOOTER CONTENT
-        ================================================== -->
-
         <div class="container footer-content">
-
-
-            <!-- Footer heading -->
 
             <span class="section-label">
                 With Love
             </span>
 
-
-            <!-- Divider -->
-
             <div class="divider">
                 <span>✦</span>
             </div>
-
-
-            <!-- Footer message -->
 
             <p class="footer-msg">
 
@@ -973,9 +625,6 @@
 
             </p>
 
-
-            <!-- Couple names -->
-
             <div class="footer-names">
 
                 A.C.S. Allfred
@@ -983,9 +632,6 @@
                 A.J.K. Verginia Keerthi
 
             </div>
-
-
-            <!-- Wedding date -->
 
             <div class="footer-date">
 
@@ -997,23 +643,14 @@
 
             </div>
 
-
             <br>
             <br>
-
-
-            <!-- =================================================
-                 WEBSITE CREATOR INFORMATION
-            ================================================== -->
 
             <p class="creator">
 
                 Made by: Justin Cruz
 
                 &nbsp;|&nbsp;
-
-
-                <!-- Instagram -->
 
                 <a
                     href="https://www.instagram.com/cruxxz.__"
@@ -1023,16 +660,10 @@
                     📸 @cruxxz.__
                 </a>
 
-
                 &nbsp;|&nbsp;
 
-
-                <!-- Phone -->
-
                 <a href="tel:+917418006223">
-
                     📞 +91 7418006223
-
                 </a>
 
             </p>
@@ -1042,20 +673,8 @@
     </section>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-         
-         This file controls:
-         1. Star animation
-         2. Fade-in animations
-         3. Countdown
-         4. Calendar
-         5. Background music
-    ====================================================== -->
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
-
 
 </body>
 
