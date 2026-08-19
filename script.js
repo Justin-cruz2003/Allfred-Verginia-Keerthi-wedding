@@ -1,6 +1,120 @@
 /* =========================================================
+   OPEN INVITATION + MUSIC
+========================================================= */
+
+(function () {
+
+    const coverScreen =
+        document.getElementById("coverScreen");
+
+    const openButton =
+        document.getElementById("openInvitation");
+
+    const weddingWebsite =
+        document.getElementById("weddingWebsite");
+
+    const weddingSong =
+        document.getElementById("weddingSong");
+
+
+    if (
+        !coverScreen ||
+        !openButton ||
+        !weddingWebsite ||
+        !weddingSong
+    ) {
+        return;
+    }
+
+
+    openButton.addEventListener("click", function () {
+
+        /*
+         * IMPORTANT:
+         *
+         * The music is played inside the button click.
+         * This is allowed by mobile browsers because
+         * the user has interacted with the page.
+         */
+
+        weddingSong.volume = 0.35;
+        weddingSong.loop = true;
+
+        const playPromise =
+            weddingSong.play();
+
+
+        if (playPromise !== undefined) {
+
+            playPromise
+                .then(function () {
+
+                    console.log(
+                        "Wedding music started successfully."
+                    );
+
+                })
+                .catch(function (error) {
+
+                    console.warn(
+                        "Music could not start:",
+                        error
+                    );
+
+                });
+
+        }
+
+
+        /*
+         * Show the wedding website
+         */
+
+        weddingWebsite.classList.remove(
+            "website-hidden"
+        );
+
+        weddingWebsite.classList.add(
+            "website-visible"
+        );
+
+
+        /*
+         * Hide cover
+         */
+
+        coverScreen.classList.add(
+            "cover-hidden"
+        );
+
+
+        /*
+         * Allow page scrolling again
+         */
+
+        document.body.style.overflowY = "auto";
+
+
+        /*
+         * Remove cover from interaction
+         * after its fade animation.
+         */
+
+        setTimeout(function () {
+
+            coverScreen.style.display = "none";
+
+        }, 1000);
+
+    });
+
+})();
+
+
+
+/* =========================================================
    STARFIELD ANIMATION
-   ========================================================= */
+========================================================= */
 
 (function () {
 
@@ -9,8 +123,10 @@
 
     if (!canvas) return;
 
+
     const ctx =
         canvas.getContext("2d");
+
 
     let canvasWidth;
     let canvasHeight;
@@ -22,13 +138,39 @@
 
     function resizeCanvas() {
 
+        const devicePixelRatio =
+            Math.min(window.devicePixelRatio || 1, 2);
+
+
         canvasWidth =
-            canvas.width =
             window.innerWidth;
 
         canvasHeight =
-            canvas.height =
             window.innerHeight;
+
+
+        canvas.width =
+            canvasWidth * devicePixelRatio;
+
+        canvas.height =
+            canvasHeight * devicePixelRatio;
+
+
+        canvas.style.width =
+            canvasWidth + "px";
+
+        canvas.style.height =
+            canvasHeight + "px";
+
+
+        ctx.setTransform(
+            devicePixelRatio,
+            0,
+            0,
+            devicePixelRatio,
+            0,
+            0
+        );
 
     }
 
@@ -36,6 +178,7 @@
     function createStars() {
 
         stars = [];
+
 
         const starCount =
             Math.floor(
@@ -60,14 +203,10 @@
                     canvasHeight,
 
                 radius:
-                    Math.random() *
-                    1.6 +
-                    0.2,
+                    Math.random() * 1.6 + 0.2,
 
                 speed:
-                    Math.random() *
-                    0.005 +
-                    0.002,
+                    Math.random() * 0.005 + 0.002,
 
                 phase:
                     Math.random() *
@@ -94,49 +233,42 @@
         animationTime += 0.016;
 
 
-        stars.forEach(
-            function (star) {
+        stars.forEach(function (star) {
 
-                const opacity =
-                    0.3 +
-                    0.7 *
-                    (
-                        0.5 +
-                        0.5 *
-                        Math.sin(
-                            animationTime *
-                            star.speed *
-                            60 +
-                            star.phase
-                        )
-                    );
-
-
-                ctx.beginPath();
-
-
-                ctx.arc(
-                    star.x,
-                    star.y,
-                    star.radius,
-                    0,
-                    Math.PI * 2
+            const opacity =
+                0.3 +
+                0.7 *
+                (
+                    0.5 +
+                    0.5 *
+                    Math.sin(
+                        animationTime *
+                        star.speed *
+                        60 +
+                        star.phase
+                    )
                 );
 
 
-                ctx.fillStyle =
-                    `rgba(
-                        255,
-                        255,
-                        255,
-                        ${opacity}
-                    )`;
+            ctx.beginPath();
 
 
-                ctx.fill();
+            ctx.arc(
+                star.x,
+                star.y,
+                star.radius,
+                0,
+                Math.PI * 2
+            );
 
-            }
-        );
+
+            ctx.fillStyle =
+                `rgba(255,255,255,${opacity})`;
+
+
+            ctx.fill();
+
+        });
 
 
         requestAnimationFrame(
@@ -151,7 +283,6 @@
         function () {
 
             resizeCanvas();
-
             createStars();
 
         }
@@ -169,195 +300,8 @@
 
 
 /* =========================================================
-   COVER + MUSIC
-   ========================================================= */
-
-(function () {
-
-    const cover =
-        document.getElementById(
-            "weddingCover"
-        );
-
-
-    const weddingSong =
-        document.getElementById(
-            "weddingSong"
-        );
-
-
-    if (!cover) return;
-
-
-    /*
-       Configure music
-    */
-
-    if (weddingSong) {
-
-        weddingSong.loop = true;
-
-        weddingSong.volume = 0.35;
-
-        weddingSong.preload = "auto";
-
-    }
-
-
-    /*
-       Function to start music
-    */
-
-    function startMusic() {
-
-        if (!weddingSong) return;
-
-
-        weddingSong
-            .play()
-            .then(function () {
-
-                console.log(
-                    "Wedding music started."
-                );
-
-            })
-            .catch(function (error) {
-
-                console.log(
-                    "Music autoplay was blocked:",
-                    error
-                );
-
-            });
-
-    }
-
-
-    /*
-       Open the wedding invitation
-    */
-
-    function openWedding() {
-
-        /*
-           Add class to show main website
-        */
-
-        document.body.classList.add(
-            "website-open"
-        );
-
-
-        /*
-           Start music immediately after
-           visitor interaction.
-        */
-
-        startMusic();
-
-
-        /*
-           Hide cover
-        */
-
-        setTimeout(
-            function () {
-
-                cover.classList.add(
-                    "hide-cover"
-                );
-
-            },
-            100
-        );
-
-
-        /*
-           Remove cover completely after
-           animation.
-        */
-
-        setTimeout(
-            function () {
-
-                cover.style.display =
-                    "none";
-
-            },
-            1400
-        );
-
-    }
-
-
-    /*
-       Visitor taps/clicks anywhere on
-       the cover.
-    */
-
-    cover.addEventListener(
-        "click",
-        openWedding
-    );
-
-
-    cover.addEventListener(
-        "touchstart",
-        function () {
-
-            openWedding();
-
-        },
-        {
-            passive: true
-        }
-    );
-
-
-    /*
-       Try autoplay immediately.
-       Browser may allow it or may block it.
-    */
-
-    window.addEventListener(
-        "load",
-        function () {
-
-            startMusic();
-
-        }
-    );
-
-
-    /*
-       Try again when page becomes visible.
-    */
-
-    document.addEventListener(
-        "visibilitychange",
-        function () {
-
-            if (
-                document.visibilityState ===
-                "visible"
-            ) {
-
-                startMusic();
-
-            }
-
-        }
-    );
-
-
-})();
-
-
-
-/* =========================================================
    FADE-IN ANIMATION
-   ========================================================= */
+========================================================= */
 
 (function () {
 
@@ -368,10 +312,7 @@
 
 
     if (
-        !(
-            "IntersectionObserver"
-            in window
-        )
+        !("IntersectionObserver" in window)
     ) {
 
         fadeElements.forEach(
@@ -391,7 +332,6 @@
 
     const observer =
         new IntersectionObserver(
-
             function (entries) {
 
                 entries.forEach(
@@ -416,18 +356,18 @@
                 );
 
             },
-
             {
                 threshold: 0.12
             }
-
         );
 
 
     fadeElements.forEach(
         function (element) {
 
-            observer.observe(element);
+            observer.observe(
+                element
+            );
 
         }
     );
@@ -437,8 +377,8 @@
 
 
 /* =========================================================
-   COUNTDOWN
-   ========================================================= */
+   COUNTDOWN TIMER
+========================================================= */
 
 (function () {
 
@@ -449,15 +389,10 @@
 
 
     const countdownIds = [
-
         "cdDays",
-
         "cdHours",
-
         "cdMins",
-
         "cdSecs"
-
     ];
 
 
@@ -476,7 +411,6 @@
                     const element =
                         document.getElementById(id);
 
-
                     if (element) {
 
                         element.textContent =
@@ -494,67 +428,86 @@
 
         const days =
             Math.floor(
-                difference /
-                86400000
+                difference / 86400000
             );
 
 
         const hours =
             Math.floor(
-                (
-                    difference %
-                    86400000
-                ) /
+                (difference % 86400000) /
                 3600000
             );
 
 
         const minutes =
             Math.floor(
-                (
-                    difference %
-                    3600000
-                ) /
+                (difference % 3600000) /
                 60000
             );
 
 
         const seconds =
             Math.floor(
-                (
-                    difference %
-                    60000
-                ) /
+                (difference % 60000) /
                 1000
             );
 
 
-        document.getElementById(
-            "cdDays"
-        ).textContent =
-            String(days)
+        const daysElement =
+            document.getElementById(
+                "cdDays"
+            );
+
+        const hoursElement =
+            document.getElementById(
+                "cdHours"
+            );
+
+        const minutesElement =
+            document.getElementById(
+                "cdMins"
+            );
+
+        const secondsElement =
+            document.getElementById(
+                "cdSecs"
+            );
+
+
+        if (daysElement) {
+
+            daysElement.textContent =
+                String(days)
                 .padStart(2, "0");
 
+        }
 
-        document.getElementById(
-            "cdHours"
-        ).textContent =
-            String(hours)
+
+        if (hoursElement) {
+
+            hoursElement.textContent =
+                String(hours)
                 .padStart(2, "0");
 
+        }
 
-        document.getElementById(
-            "cdMins"
-        ).textContent =
-            String(minutes)
+
+        if (minutesElement) {
+
+            minutesElement.textContent =
+                String(minutes)
                 .padStart(2, "0");
 
+        }
 
-        document.getElementById(
-            "cdSecs"
-        ).textContent =
-            String(seconds)
+
+        if (secondsElement) {
+
+            secondsElement.textContent =
+                String(seconds)
                 .padStart(2, "0");
+
+        }
 
     }
 
@@ -573,7 +526,7 @@
 
 /* =========================================================
    SEPTEMBER 2026 CALENDAR
-   ========================================================= */
+========================================================= */
 
 (function () {
 
@@ -586,26 +539,18 @@
     if (!calendarGrid) return;
 
 
-    const weekdays = [
-
+    const days = [
         "Sun",
-
         "Mon",
-
         "Tue",
-
         "Wed",
-
         "Thu",
-
         "Fri",
-
         "Sat"
-
     ];
 
 
-    weekdays.forEach(
+    days.forEach(
         function (day) {
 
             const dayElement =
@@ -631,13 +576,12 @@
 
 
     /*
-       September 2026 starts on Tuesday.
-
-       Sunday = empty
-       Monday = empty
-       Tuesday = September 1
-    */
-
+     * September 1, 2026 is Tuesday.
+     * Therefore two empty spaces are required:
+     *
+     * Sunday
+     * Monday
+     */
 
     for (
         let i = 0;
@@ -696,5 +640,31 @@
         );
 
     }
+
+})();
+
+
+
+/* =========================================================
+   PREVENT SCROLLING WHILE COVER IS DISPLAYED
+========================================================= */
+
+(function () {
+
+    const coverScreen =
+        document.getElementById(
+            "coverScreen"
+        );
+
+
+    if (!coverScreen) return;
+
+
+    /*
+     * The page cannot be scrolled while
+     * the opening cover is displayed.
+     */
+
+    document.body.style.overflow = "hidden";
 
 })();
