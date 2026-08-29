@@ -29,8 +29,6 @@
 
     openButton.addEventListener("click", function () {
 
-        /* Start wedding music */
-
         weddingSong.volume = 0.35;
         weddingSong.loop = true;
 
@@ -60,8 +58,6 @@
         }
 
 
-        /* Show website */
-
         weddingWebsite.classList.remove(
             "website-hidden"
         );
@@ -71,19 +67,13 @@
         );
 
 
-        /* Hide cover */
-
         coverScreen.classList.add(
             "cover-hidden"
         );
 
 
-        /* Allow page scrolling */
-
         document.body.style.overflowY = "auto";
 
-
-        /* Remove cover after animation */
 
         setTimeout(function () {
 
@@ -619,16 +609,22 @@
                 "highlighted"
             );
 
+            dateElement.title =
+                "Wedding – 2 September";
+
         }
 
 
-        /* Reception – September 6 */
+        /* Post-Wedding Reception – September 6 */
 
         if (date === 6) {
 
             dateElement.classList.add(
-                "reception-highlighted"
+                "post-highlighted"
             );
+
+            dateElement.title =
+                "Post-Wedding Reception – 6 September";
 
         }
 
