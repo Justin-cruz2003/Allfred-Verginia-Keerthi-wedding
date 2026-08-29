@@ -1,1149 +1,863 @@
-<!DOCTYPE html>
-<html lang="en">
+this is the html code  i uplode bello 
+\<!DOCTYPE html>
+\<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
+\<head>
 
-    <meta name="viewport"
+    \<!-- =====================================================
+         BASIC PAGE SETTINGS
+    \====================================================== -->
+
+    \<meta charset="UTF-8">
+
+    \<meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Post-Wedding Reception Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi">
+    \<meta name="description"
+          content="Wedding Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi">
 
-    <meta name="theme-color" content="#f7f1e8">
+    \<title>
+        Wedding Invitation – Allfred & Verginia Keerthi
+    \</title>
 
-    <title>
-        Post-Wedding Reception – Allfred & Verginia Keerthi
-    </title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    \<!-- =====================================================
+         GOOGLE FONTS
+    \====================================================== -->
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap"
+    \<link rel="preconnect"
+          href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+
+    \<link rel="preconnect"
+          href="[https://fonts.gstatic.com](https://fonts.gstatic.com)"
+          crossorigin>
+
+    \<link
+        href="[https://fonts.googleapis.com/css2?family=Cormorant+Garamond\:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script\:wght@400;500;600;700&family=Great+Vibes&family=Lato\:wght@300;400;700&display=swap](https://fonts.googleapis.com/css2?family=Cormorant+Garamond\:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600\&family=Dancing+Script\:wght@400;500;600;700\&family=Great+Vibes\&family=Lato\:wght@300;400;700\&display=swap)"
         rel="stylesheet">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
 
-</head>
+    \<!-- =====================================================
+         CSS
+    \====================================================== -->
+
+    \<link rel="stylesheet" href="style.css">
+
+\</head>
 
 
-<body>
+\<body>
 
 
-    <!-- =====================================================
+    \<!-- =====================================================
          COVER / OPENING SCREEN
-    ====================================================== -->
+        &#x20;
+         This screen is displayed first.
+         The website remains hidden until the button is clicked.
+    \====================================================== -->
 
-    <div id="coverScreen">
+    \<div id="coverScreen">
 
-        <div class="cover-moon"></div>
+        \<!-- Decorative moon -->
+        \<div class="cover-moon">\</div>
 
-        <p class="cover-blessing">
+        \<!-- Small top text -->
+        \<p class="cover-blessing">
             ✦ With the Blessings of Almighty God ✦
-        </p>
+        \</p>
 
-        <h1 class="cover-title">
-            Post-Wedding Reception
-        </h1>
+        \<!-- Main title -->
+        \<h1 class="cover-title">
+            Wedding Invitation
+        \</h1>
 
-        <div class="cover-line"></div>
+        \<!-- Gold divider -->
+        \<div class="cover-line">\</div>
 
-        <div class="cover-names">
+        \<!-- Couple names -->
+        \<div class="cover-names">
 
-            <span>
+            \<span>
                 A.C.S. Allfred
-            </span>
+            \</span>
 
-            <span class="cover-amp">
+            \<span class="cover-amp">
                 &
-            </span>
+            \</span>
 
-            <span>
+            \<span>
                 A.J.K. Verginia Keerthi
-            </span>
+            \</span>
 
-        </div>
+        \</div>
 
-        <p class="cover-date">
-            06 September 2026
-        </p>
+        \<!-- Date -->
+        \<p class="cover-date">
+            02 September 2026
+        \</p>
 
-        <button
-            id="openInvitation"
-            class="open-button"
-            type="button">
+        \<!-- Open button -->
+        \<button id="openInvitation"
+                class="open-button"
+                type="button">
 
-            <span class="button-icon">
+            \<span class="button-icon">
                 ♡
-            </span>
+            \</span>
 
             Open Invitation
 
-        </button>
+        \</button>
 
-        <p class="cover-hint">
+        \<p class="cover-hint">
             Tap to open
-        </p>
+        \</p>
 
-    </div>
+    \</div>
 
 
-    <!-- =====================================================
-         BACKGROUND MUSIC
-    ====================================================== -->
 
-    <audio
+    \<!-- =====================================================
+         AUDIO
+        &#x20;
+         Music starts after the user clicks "Open Invitation".
+         This avoids browser autoplay restrictions.
+    \====================================================== -->
+
+    \<audio
         id="weddingSong"
-        src="Vallavan_bgm.music(256k).mp3.mpeg"
+        src="Vallavan\_bgm.music(256k).mp3.mpeg"
         loop
         preload="auto">
-    </audio>
+    \</audio>
 
 
-    <!-- =====================================================
+
+    \<!-- =====================================================
          MAIN WEBSITE
-    ====================================================== -->
+        &#x20;
+         Hidden until the cover button is clicked.
+    \====================================================== -->
 
-    <main id="weddingWebsite" class="website-hidden">
-
-
-        <!-- =================================================
-             STAR / DECORATIVE BACKGROUND
-        ================================================== -->
-
-        <canvas id="starfield"></canvas>
+    \<main id="weddingWebsite" class="website-hidden">
 
 
-        <!-- =================================================
+        \<!-- =================================================
+             STAR BACKGROUND
+        \================================================== -->
+
+        \<canvas id="starfield">\</canvas>
+
+
+
+        \<!-- =================================================
              HERO SECTION
-        ================================================== -->
+        \================================================== -->
 
-        <section id="hero">
+        \<section id="hero">
 
-            <div class="moon-glow"></div>
+            \<div class="moon-glow">\</div>
 
-            <p class="join-label">
+            \<p class="join-label">
                 ✦ With the Blessings of Almighty God ✦
-            </p>
+            \</p>
 
-            <h1 class="invite-title">
-                Post-Wedding Reception
-            </h1>
+            \<h1 class="invite-title">
+                Wedding Invitation
+            \</h1>
 
-            <div class="gold-line"></div>
+            \<div class="gold-line">\</div>
 
-
-            <div class="names">
+            \<div class="names">
 
                 A.C.S. Allfred
 
-                <span class="amp">
+                \<span class="amp">
                     &amp;
-                </span>
+                \</span>
 
                 A.J.K. Verginia Keerthi
 
-            </div>
+            \</div>
+
+            \<p class="tagline">
+
+                “What God has joined together,
+                let no one separate.”
+
+                \<br>
+
+                \<span>
+                    — Mark 10:9
+                \</span>
+
+            \</p>
+
+            \<p class="invitation-text">
+
+                With the abundant blessings of Almighty God
+                and the loving prayers of our beloved
+                grandparents and family members,
+                we cordially invite you to grace the wedding
+                ceremony of our beloved children with your
+                esteemed presence and blessings.
+
+            \</p>
+
+        \</section>
 
 
-            <p class="tagline">
 
-                “The Lord has done great things for us,
-                and we are filled with joy.”
-
-                <br>
-
-                <span>
-                    — Psalm 126:3
-                </span>
-
-            </p>
-
-
-            <p class="invitation-text">
-
-                With great joy, we invite you to the
-                Post-Wedding Reception of
-
-                <strong>
-                    A.C.S. Allfred &amp; A.J.K. Verginia Keerthi
-                </strong>
-
-                and request the honour of your gracious
-                presence and blessings on this joyful occasion.
-
-            </p>
-
-        </section>
-
-
-        <!-- =================================================
+        \<!-- =================================================
              COUNTDOWN
-        ================================================== -->
+        \================================================== -->
 
-        <section id="countdown" class="fade-in">
+        \<section id="countdown" class="fade-in">
 
-            <div class="container">
+            \<div class="container">
 
-                <span class="section-label">
-                    Counting down to the reception
-                </span>
+                \<span class="section-label">
+                    Counting down to the wedding day
+                \</span>
 
-                <div class="divider">
-                    <span>✦</span>
-                </div>
+                \<div class="divider">
+                    \<span>✦\</span>
+                \</div>
 
+                \<div class="countdown-grid">
 
-                <div class="countdown-grid">
+                    \<div class="countdown-box">
 
-                    <div class="countdown-box">
+                        \<div class="num" id="cdDays">
+                            \--
+                        \</div>
 
-                        <div class="num" id="cdDays">
-                            --
-                        </div>
-
-                        <div class="lbl">
+                        \<div class="lbl">
                             Days
-                        </div>
+                        \</div>
 
-                    </div>
+                    \</div>
 
 
-                    <div class="countdown-box">
+                    \<div class="countdown-box">
 
-                        <div class="num" id="cdHours">
-                            --
-                        </div>
+                        \<div class="num" id="cdHours">
+                            \--
+                        \</div>
 
-                        <div class="lbl">
+                        \<div class="lbl">
                             Hours
-                        </div>
+                        \</div>
 
-                    </div>
+                    \</div>
 
 
-                    <div class="countdown-box">
+                    \<div class="countdown-box">
 
-                        <div class="num" id="cdMins">
-                            --
-                        </div>
+                        \<div class="num" id="cdMins">
+                            \--
+                        \</div>
 
-                        <div class="lbl">
+                        \<div class="lbl">
                             Minutes
-                        </div>
+                        \</div>
 
-                    </div>
+                    \</div>
 
 
-                    <div class="countdown-box">
+                    \<div class="countdown-box">
 
-                        <div class="num" id="cdSecs">
-                            --
-                        </div>
+                        \<div class="num" id="cdSecs">
+                            \--
+                        \</div>
 
-                        <div class="lbl">
+                        \<div class="lbl">
                             Seconds
-                        </div>
+                        \</div>
 
-                    </div>
+                    \</div>
 
-                </div>
+                \</div>
 
-            </div>
+            \</div>
 
-        </section>
-
-
-        <!-- =================================================
-             INVITATION MESSAGE
-        ================================================== -->
-
-        <section id="invitation" class="fade-in">
-
-            <div class="container">
-
-                <span class="section-label">
-                    A Joyful Invitation
-                </span>
-
-                <div class="divider">
-                    <span>♡</span>
-                </div>
+        \</section>
 
 
-                <div class="reception-box">
 
-                    <h2 class="section-title">
-                        With Great Joy
-                    </h2>
-
-                    <p>
-
-                        “The Lord has done great things for us,
-                        and we are filled with joy.”
-
-                    </p>
-
-                    <p>
-
-                        With great joy, we invite you to the
-                        <strong>Post-Wedding Reception</strong>
-                        of our beloved
-
-                    </p>
-
-
-                    <div class="highlight-names">
-
-                        <span>
-                            A.C.S. Allfred
-                        </span>
-
-                        <span class="amp">
-                            &amp;
-                        </span>
-
-                        <span>
-                            A.J.K. Verginia Keerthi
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        Your gracious presence and blessings
-                        will make this celebration even more
-                        special and memorable for us.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
+        \<!-- =================================================
              FAMILY
-        ================================================== -->
+        \================================================== -->
 
-        <section id="family" class="fade-in">
+        \<section id="family" class="fade-in">
 
-            <div class="container">
+            \<div class="container">
 
-                <span class="section-label">
+                \<span class="section-label">
                     With the blessings of our families
-                </span>
+                \</span>
 
-                <div class="divider">
-                    <span>♡</span>
-                </div>
-
-
-                <div class="family-grid">
+                \<div class="divider">
+                    \<span>♡\</span>
+                \</div>
 
 
-                    <!-- Bride Family -->
+                \<div class="family-grid">
 
-                    <div class="family-card">
+                    \<div class="family-card">
 
-                        <p class="family-label">
+                        \<p class="family-label">
                             Bride's Family
-                        </p>
+                        \</p>
 
-                        <h2>
+                        \<h2>
                             Mrs. Cecilly Charles
-                        </h2>
+                        \</h2>
 
-                        <p>
+                        \<p>
                             Coimbatore
-                        </p>
+                        \</p>
 
-                    </div>
+                    \</div>
 
 
-                    <!-- Groom Family -->
+                    \<div class="family-card">
 
-                    <div class="family-card">
-
-                        <p class="family-label">
+                        \<p class="family-label">
                             Groom's Family
-                        </p>
+                        \</p>
 
-                        <h2>
+                        \<h2>
                             Mr. G. Anthonyswamy Jaikumar
-                        </h2>
+                        \</h2>
 
-                        <h2>
+                        \<h2>
                             Mrs. A.J.K. Irudaya Catherine
-                        </h2>
+                        \</h2>
 
-                        <p>
+                        \<p>
                             Bengaluru
-                        </p>
+                        \</p>
 
-                    </div>
+                    \</div>
 
-                </div>
+                \</div>
 
-            </div>
+            \</div>
 
-        </section>
-
-
-        <!-- =================================================
-             RECEPTION EVENT
-        ================================================== -->
-
-        <section id="events" class="fade-in">
-
-            <div class="container">
-
-                <span class="section-label">
-                    Join Us in Celebration
-                </span>
-
-                <div class="divider">
-                    <span>✦</span>
-                </div>
-
-                <h2 class="section-title">
-                    Post-Wedding Reception
-                </h2>
+        \</section>
 
 
-                <div class="event-card single-event">
 
-                    <p class="event-type">
-                        ✿ Reception Day ✿
-                    </p>
+        \<!-- =================================================
+             WEDDING CEREMONY
+        \================================================== -->
+
+        \<section id="events" class="fade-in">
+
+            \<div class="container">
+
+                \<span class="section-label">
+                    The Wedding Ceremony
+                \</span>
+
+                \<div class="divider">
+                    \<span>✦\</span>
+                \</div>
+
+                \<h2 class="section-title">
+                    Holy Matrimony
+                \</h2>
 
 
-                    <div class="big-date">
-                        06
-                    </div>
+                \<div class="event-card single-event">
 
+                    \<p class="event-type">
+                        ✿ Wedding Day ✿
+                    \</p>
 
-                    <div class="month-year">
+                    \<div class="big-date">
+                        02
+                    \</div>
+
+                    \<div class="month-year">
                         September 2026
-                    </div>
+                    \</div>
+
+                    \<div class="day-name">
+                        Wednesday
+                    \</div>
+
+                    \<div class="divider">
+                        \<span>♡\</span>
+                    \</div>
 
 
-                    <div class="day-name">
-                        Sunday
-                    </div>
+                    \<div class="info-row">
+
+                        \<span>🕘\</span>
+
+                        \<span>
+                            9:30 AM
+                        \</span>
+
+                    \</div>
 
 
-                    <div class="divider">
-                        <span>♡</span>
-                    </div>
+                    \<div class="info-row">
+
+                        \<span>⛪\</span>
+
+                        \<span>
+
+                            St. Joseph's Church,
+
+                            \<br>
+
+                            Podanur, Coimbatore
+
+                        \</span>
+
+                    \</div>
 
 
-                    <!-- Time -->
+                    \<p class="bishop">
 
-                    <div class="info-row">
+                        Holy Mass will be solemnized by
 
-                        <span>
-                            🕧
-                        </span>
+                        \<br>
 
-                        <span>
-                            12:30 PM onwards
-                        </span>
+                        \<strong>
+                            His Grace Most Rev. Dr. Arokiaraj Savarimuthu
+                        \</strong>
 
-                    </div>
+                        \<br>
 
+                        \<span>
+                            (Bishop of the Diocese of Tiruchirappalli)
+                        \</span>
 
-                    <!-- Venue -->
+                        \<br>
 
-                    <div class="info-row">
+                        together with the concelebrating priests.
 
-                        <span>
-                            📍
-                        </span>
+                    \</p>
 
-                        <span>
+                \</div>
 
-                            DSA Bhavan,
-                            <br>
-                            Dubasipalya,
-                            <br>
-                            Bangalore - 560059
+            \</div>
 
-                        </span>
-
-                    </div>
+        \</section>
 
 
-                    <p class="bishop">
 
-                        We look forward to your gracious
-                        presence and blessings.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
+        \<!-- =================================================
              CALENDAR
-        ================================================== -->
+        \================================================== -->
 
-        <section id="calendar" class="fade-in">
+        \<section id="calendar" class="fade-in">
 
-            <div class="container">
+            \<div class="container">
 
-                <span class="section-label">
+                \<span class="section-label">
                     Mark your calendar
-                </span>
+                \</span>
 
-                <div class="divider">
-                    <span>✦</span>
-                </div>
+                \<div class="divider">
+                    \<span>✦\</span>
+                \</div>
 
-
-                <h2 class="section-title">
+                \<h2 class="section-title">
                     September 2026
-                </h2>
+                \</h2>
+
+                \<br>
 
 
-                <br>
+                \<div class="cal-widget">
 
-
-                <div class="cal-widget">
-
-                    <div class="cal-header">
+                    \<div class="cal-header">
                         September 2026
-                    </div>
+                    \</div>
 
+                    \<div
+                        class="cal-grid"
+                        id="calGrid">
+                    \</div>
 
-                    <div class="cal-grid">
+                    \<div class="cal-legend">
 
-                        <!-- Week days -->
+                        \<span>
 
-                        <div class="cal-day-name">
-                            Sun
-                        </div>
+                            \<span class="dot dot-gold">\</span>
 
-                        <div class="cal-day-name">
-                            Mon
-                        </div>
+                            Wedding – 2nd
 
-                        <div class="cal-day-name">
-                            Tue
-                        </div>
+                        \</span>
 
-                        <div class="cal-day-name">
-                            Wed
-                        </div>
+                    \</div>
 
-                        <div class="cal-day-name">
-                            Thu
-                        </div>
+                \</div>
 
-                        <div class="cal-day-name">
-                            Fri
-                        </div>
+            \</div>
 
-                        <div class="cal-day-name">
-                            Sat
-                        </div>
+        \</section>
 
 
-                        <!-- Empty days before September 1 -->
 
-                        <div class="cal-empty"></div>
+        \<!-- =================================================
+             WEDDING VENUE
+        \================================================== -->
 
-                        <div class="cal-empty"></div>
+        \<section id="venue" class="fade-in">
 
-                        <div class="cal-day">
-                            1
-                        </div>
+            \<div class="container">
 
-
-                        <div class="cal-day wedding-day">
-                            2
-                        </div>
-
-
-                        <div class="cal-day">
-                            3
-                        </div>
-
-                        <div class="cal-day">
-                            4
-                        </div>
-
-                        <div class="cal-day">
-                            5
-                        </div>
-
-
-                        <!-- Week 2 -->
-
-                        <div class="cal-day reception-day">
-                            <span>6</span>
-                            <small>Reception</small>
-                        </div>
-
-                        <div class="cal-day">
-                            7
-                        </div>
-
-                        <div class="cal-day">
-                            8
-                        </div>
-
-                        <div class="cal-day">
-                            9
-                        </div>
-
-                        <div class="cal-day">
-                            10
-                        </div>
-
-                        <div class="cal-day">
-                            11
-                        </div>
-
-                        <div class="cal-day">
-                            12
-                        </div>
-
-
-                        <!-- Week 3 -->
-
-                        <div class="cal-day">
-                            13
-                        </div>
-
-                        <div class="cal-day">
-                            14
-                        </div>
-
-                        <div class="cal-day">
-                            15
-                        </div>
-
-                        <div class="cal-day">
-                            16
-                        </div>
-
-                        <div class="cal-day">
-                            17
-                        </div>
-
-                        <div class="cal-day">
-                            18
-                        </div>
-
-                        <div class="cal-day">
-                            19
-                        </div>
-
-
-                        <!-- Week 4 -->
-
-                        <div class="cal-day">
-                            20
-                        </div>
-
-                        <div class="cal-day">
-                            21
-                        </div>
-
-                        <div class="cal-day">
-                            22
-                        </div>
-
-                        <div class="cal-day">
-                            23
-                        </div>
-
-                        <div class="cal-day">
-                            24
-                        </div>
-
-                        <div class="cal-day">
-                            25
-                        </div>
-
-                        <div class="cal-day">
-                            26
-                        </div>
-
-
-                        <!-- Week 5 -->
-
-                        <div class="cal-day">
-                            27
-                        </div>
-
-                        <div class="cal-day">
-                            28
-                        </div>
-
-                        <div class="cal-day">
-                            29
-                        </div>
-
-                        <div class="cal-day">
-                            30
-                        </div>
-
-                        <div class="cal-empty"></div>
-
-                        <div class="cal-empty"></div>
-
-                        <div class="cal-empty"></div>
-
-                    </div>
-
-
-                    <div class="cal-legend">
-
-                        <span>
-
-                            <span class="dot dot-gold"></span>
-
-                            Post-Wedding Reception – 6th
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             RECEPTION VENUE
-        ================================================== -->
-
-        <section id="venue" class="fade-in">
-
-            <div class="container">
-
-                <span class="section-label">
+                \<span class="section-label">
                     Where love awaits
-                </span>
+                \</span>
 
-                <div class="divider">
-                    <span>✦</span>
-                </div>
-
-
-                <div class="reception-box">
-
-                    <h2 class="section-title">
-                        Reception Venue
-                    </h2>
+                \<div class="divider">
+                    \<span>✦\</span>
+                \</div>
 
 
-                    <p>
+                \<div class="reception-box">
+
+                    \<h2 class="section-title">
+                        Wedding Venue
+                    \</h2>
+
+                    \<p>
 
                         We request the honour of your presence
-                        at the Post-Wedding Reception of
+                        at the wedding ceremony at
 
-                    </p>
-
-
-                    <h3 class="venue-highlight">
-
-                        A.C.S. Allfred
-                        <span>&amp;</span>
-                        A.J.K. Verginia Keerthi
-
-                    </h3>
-
-
-                    <p>
+                        \<strong>
+                            St. Joseph's Church,
+                            Podanur,
+                            Coimbatore
+                        \</strong>
 
                         on
 
-                        <strong>
-                            Sunday, 6 September 2026
-                        </strong>
+                        \<strong>
+                            02 September 2026 at 9:30 AM
+                        \</strong>
 
-                        at
+                    \</p>
 
-                        <strong>
-                            12:30 PM onwards
-                        </strong>
-
-                    </p>
-
-                </div>
+                \</div>
 
 
-                <!-- Google Map -->
+                \<div class="venue-card fade-in">
 
-                <div class="venue-card fade-in">
+                    \<div class="map-wrapper">
 
-                    <div class="map-wrapper">
-
-                        <iframe
-                            src="https://maps.google.com/maps?q=DSA%20Bhavan%20Dubasipalya%20Bangalore%20560059&output=embed&z=15"
+                        \<iframe
+                            src="[https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15](https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore\&output=embed\&z=15)"
                             allowfullscreen
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="DSA Bhavan Dubasipalya Bangalore">
-                        </iframe>
+                            title="St. Joseph's Church Podanur Coimbatore">
+                        \</iframe>
 
-                    </div>
-
-
-                    <div class="venue-info">
-
-                        <p class="venue-type">
-                            📍 Reception Venue
-                        </p>
+                    \</div>
 
 
-                        <h3>
-                            DSA Bhavan
-                        </h3>
+                    \<div class="venue-info">
+
+                        \<p class="venue-type">
+                            ⛪ Wedding Venue
+                        \</p>
+
+                        \<h3>
+                            St. Joseph's Church
+                        \</h3>
+
+                        \<p>
+                            Podanur,
+                            \<br>
+                            Coimbatore
+                        \</p>
+
+                        \<p>
+                            02 September 2026 · 9:30 AM
+                        \</p>
+
+                    \</div>
+
+                \</div>
+
+            \</div>
+
+        \</section>
 
 
-                        <p>
 
-                            Dubasipalya,
-                            <br>
-                            Bangalore - 560059
+        \<!-- =================================================
+             RECEPTION
+        \================================================== -->
 
-                        </p>
+        \<section id="reception" class="fade-in">
 
+            \<div class="container">
 
-                        <p>
+                \<span class="section-label">
+                    And thereafter
+                \</span>
 
-                            Sunday, 6 September 2026
-                            <br>
-                            12:30 PM onwards
-
-                        </p>
-
-
-                        <!-- Google Maps Button -->
-
-                        <a
-                            class="map-button"
-                            href="https://www.google.com/maps/search/?api=1&query=DSA+Bhavan+Dubasipalya+Bangalore+560059"
-                            target="_blank"
-                            rel="noopener">
-
-                            📍 Open in Google Maps
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+                \<div class="divider">
+                    \<span>♡\</span>
+                \</div>
 
 
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
+                \<div class="reception-box">
 
-        <section id="contact" class="fade-in">
+                    \<h2 class="section-title">
+                        Reception
+                    \</h2>
 
-            <div class="container">
+                    \<p>
 
-                <span class="section-label">
-                    For more information
-                </span>
+                        And thereafter, for the reception at
 
-                <div class="divider">
-                    <span>♡</span>
-                </div>
+                        \<strong>
 
+                            Lakshmi Hall,
+                            Bharathi Nagar,
+                            Podanur Main Road,
+                            Coimbatore.
 
-                <h2 class="section-title">
-                    Contact
-                </h2>
+                        \</strong>
 
+                    \</p>
 
-                <div class="family-grid">
-
-
-                    <!-- Chones -->
-
-                    <div class="family-card">
-
-                        <p class="family-label">
-                            Chones
-                        </p>
-
-                        <h2>
-                            9740813249
-                        </h2>
+                \</div>
 
 
-                        <a
-                            href="tel:+919740813249"
-                            class="contact-button">
+                \<div class="venue-card fade-in">
 
-                            📞 Call
+                    \<div class="map-wrapper">
 
-                        </a>
+                        \<iframe
+                            src="[https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15](https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore\&output=embed\&z=15)"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lakshmi Hall Podanur Coimbatore">
+                        \</iframe>
 
-                    </div>
-
-
-                    <!-- Alex -->
-
-                    <div class="family-card">
-
-                        <p class="family-label">
-                            Alex
-                        </p>
-
-                        <h2>
-                            9900950144
-                        </h2>
+                    \</div>
 
 
-                        <a
-                            href="tel:+919900950144"
-                            class="contact-button">
+                    \<div class="venue-info">
 
-                            📞 Call
+                        \<p class="venue-type">
+                            🎉 Reception Venue
+                        \</p>
 
-                        </a>
+                        \<h3>
+                            Lakshmi Hall
+                        \</h3>
 
-                    </div>
+                        \<p>
 
-                </div>
+                            Bharathi Nagar,
+                            Podanur Main Road,
 
-            </div>
+                            \<br>
 
-        </section>
+                            Coimbatore
+
+                        \</p>
+
+                    \</div>
+
+                \</div>
+
+            \</div>
+
+        \</section>
 
 
-        <!-- =================================================
+
+        \<!-- =================================================
              FOOTER
-        ================================================== -->
+        \================================================== -->
 
-        <section id="footer">
+        \<section id="footer">
 
-
-            <svg
+            \<svg
                 class="cityscape"
                 viewBox="0 0 1000 260"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"
                 preserveAspectRatio="xMidYMax meet">
 
 
-                <g fill="#d4aa70">
+                \<g fill="#d4aa70">
 
-                    <rect x="0" y="180" width="1000" height="80"/>
+                    \<rect x="0" y="180" width="1000" height="80"/>
 
-                    <rect x="20" y="140" width="40" height="40"/>
-                    <rect x="70" y="120" width="50" height="60"/>
-                    <rect x="130" y="100" width="35" height="80"/>
-                    <rect x="175" y="130" width="30" height="50"/>
-                    <rect x="215" y="110" width="55" height="70"/>
-                    <rect x="280" y="90" width="40" height="90"/>
-                    <rect x="330" y="120" width="30" height="60"/>
-                    <rect x="370" y="70" width="45" height="110"/>
-                    <rect x="430" y="100" width="60" height="80"/>
+                    \<rect x="20" y="140" width="40" height="40"/>
+                    \<rect x="70" y="120" width="50" height="60"/>
+                    \<rect x="130" y="100" width="35" height="80"/>
+                    \<rect x="175" y="130" width="30" height="50"/>
+                    \<rect x="215" y="110" width="55" height="70"/>
+                    \<rect x="280" y="90" width="40" height="90"/>
+                    \<rect x="330" y="120" width="30" height="60"/>
+                    \<rect x="370" y="70" width="45" height="110"/>
+                    \<rect x="430" y="100" width="60" height="80"/>
 
-                    <polygon
-                        points="460,60 430,100 490,100"/>
+                    \<polygon points="460,60 430,100 490,100"/>
 
-                    <rect
-                        x="453"
-                        y="35"
-                        width="14"
-                        height="30"/>
+                    \<rect x="453" y="35" width="14" height="30"/>
+                    \<rect x="447" y="52" width="26" height="5"/>
 
-                    <rect
-                        x="447"
-                        y="52"
-                        width="26"
-                        height="5"/>
+                    \<rect x="500" y="80" width="45" height="100"/>
+                    \<rect x="555" y="110" width="30" height="70"/>
+                    \<rect x="595" y="90" width="50" height="90"/>
+                    \<rect x="655" y="120" width="35" height="60"/>
+                    \<rect x="700" y="100" width="40" height="80"/>
+                    \<rect x="750" y="130" width="30" height="50"/>
+                    \<rect x="790" y="110" width="50" height="70"/>
+                    \<rect x="850" y="140" width="40" height="40"/>
+                    \<rect x="900" y="120" width="35" height="60"/>
+                    \<rect x="945" y="150" width="55" height="30"/>
 
-                    <rect x="500" y="80" width="45" height="100"/>
-                    <rect x="555" y="110" width="30" height="70"/>
-                    <rect x="595" y="90" width="50" height="90"/>
-                    <rect x="655" y="120" width="35" height="60"/>
-                    <rect x="700" y="100" width="40" height="80"/>
-                    <rect x="750" y="130" width="30" height="50"/>
-                    <rect x="790" y="110" width="50" height="70"/>
-                    <rect x="850" y="140" width="40" height="40"/>
-                    <rect x="900" y="120" width="35" height="60"/>
-                    <rect x="945" y="150" width="55" height="30"/>
-
-                </g>
+                \</g>
 
 
-                <g
+                \<g
                     transform="translate(450,115)"
                     fill="#1a2a5a">
 
-                    <ellipse
+                    \<ellipse
                         cx="-15"
                         cy="-30"
                         rx="9"
                         ry="9"/>
 
-                    <path
+                    \<path
                         d="M-24 -20 Q-25 10 -35 40 Q-5 40 -5 -20Z"/>
 
-                    <ellipse
+                    \<ellipse
                         cx="15"
                         cy="-30"
                         rx="9"
                         ry="9"/>
 
-                    <path
+                    \<path
                         d="M6 -20 Q5 10 25 40 Q35 40 24 -20Z"/>
 
-                    <path
+                    \<path
                         d="M-5 0 Q0 5 5 0"
                         stroke="#d4aa70"
                         stroke-width="2"
                         fill="none"/>
 
-                </g>
+                \</g>
 
 
-                <circle
+                \<circle
                     cx="500"
                     cy="30"
                     r="25"
                     fill="rgba(212,170,112,0.15)"/>
 
-
-                <circle
+                \<circle
                     cx="500"
                     cy="30"
                     r="18"
                     fill="rgba(212,170,112,0.1)"/>
 
-            </svg>
+            \</svg>
 
 
-            <div class="container footer-content">
+            \<div class="container footer-content">
 
-                <span class="section-label">
+                \<span class="section-label">
                     With Love
-                </span>
+                \</span>
 
+                \<div class="divider">
+                    \<span>✦\</span>
+                \</div>
 
-                <div class="divider">
-                    <span>✦</span>
-                </div>
-
-
-                <p class="footer-msg">
+                \<p class="footer-msg">
 
                     “Your gracious presence and blessings
                     will greatly enhance our joy on this
                     auspicious occasion.”
 
-                </p>
+                \</p>
 
 
-                <div class="footer-names">
+                \<div class="footer-names">
 
                     A.C.S. Allfred
                     &amp;
                     A.J.K. Verginia Keerthi
 
-                </div>
+                \</div>
 
 
-                <div class="footer-date">
+                \<div class="footer-date">
 
-                    06
+                    02
                     &nbsp;
                     September
                     &nbsp;
                     2026
 
-                </div>
+                \</div>
 
 
-                <br>
-                <br>
+                \<br>
+                \<br>
 
 
-                <!-- Contact -->
-
-                <p class="creator">
-
-                    Chones:
-
-                    <a href="tel:+919740813249">
-                        📞 9740813249
-                    </a>
-
-                    &nbsp; | &nbsp;
-
-                    Alex:
-
-                    <a href="tel:+919900950144">
-                        📞 9900950144
-                    </a>
-
-                </p>
-
-
-                <p class="creator">
+                \<p class="creator">
 
                     Made by: Justin Cruz
 
                     &nbsp;|&nbsp;
 
-                    <a
-                        href="https://www.instagram.com/cruxxz.__"
-                        target="_blank"
+                    \<a
+                        href="[https://www.instagram.com/cruxxz.\_\_](https://www.instagram.com/cruxxz.__)"
+                        target="\_blank"
                         rel="noopener">
 
-                        📸 @cruxxz.__
+                        📸 @cruxxz.\_\_
 
-                    </a>
+                    \</a>
 
                     &nbsp;|&nbsp;
 
-                    <a href="tel:+917418006223">
+                    \<a href="tel:+917418006223">
 
                         📞 +91 7418006223
 
-                    </a>
+                    \</a>
 
-                </p>
+                \</p>
 
-            </div>
+            \</div>
 
-        </section>
-
-
-    </main>
+        \</section>
 
 
-    <!-- =====================================================
+    \</main>
+
+
+
+    \<!-- =====================================================
          JAVASCRIPT
-    ====================================================== -->
+    \====================================================== -->
 
-    <script src="script.js"></script>
+    \<script src="script.js">\</script>
 
-</body>
+\</body>
 
-</html>
+\</html>
+ alter the code to i need 
