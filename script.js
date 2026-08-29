@@ -29,13 +29,7 @@
 
     openButton.addEventListener("click", function () {
 
-        /*
-         * IMPORTANT:
-         *
-         * The music is played inside the button click.
-         * This is allowed by mobile browsers because
-         * the user has interacted with the page.
-         */
+        /* Start wedding music */
 
         weddingSong.volume = 0.35;
         weddingSong.loop = true;
@@ -66,9 +60,7 @@
         }
 
 
-        /*
-         * Show the wedding website
-         */
+        /* Show website */
 
         weddingWebsite.classList.remove(
             "website-hidden"
@@ -79,26 +71,19 @@
         );
 
 
-        /*
-         * Hide cover
-         */
+        /* Hide cover */
 
         coverScreen.classList.add(
             "cover-hidden"
         );
 
 
-        /*
-         * Allow page scrolling again
-         */
+        /* Allow page scrolling */
 
         document.body.style.overflowY = "auto";
 
 
-        /*
-         * Remove cover from interaction
-         * after its fade animation.
-         */
+        /* Remove cover after animation */
 
         setTimeout(function () {
 
@@ -626,10 +611,23 @@
             date;
 
 
+        /* Wedding – September 2 */
+
         if (date === 2) {
 
             dateElement.classList.add(
                 "highlighted"
+            );
+
+        }
+
+
+        /* Reception – September 6 */
+
+        if (date === 6) {
+
+            dateElement.classList.add(
+                "reception-highlighted"
             );
 
         }
@@ -660,12 +658,6 @@
     if (!coverScreen) return;
 
 
-    /*
-     * The page cannot be scrolled while
-     * the opening cover is displayed.
-     */
-
     document.body.style.overflow = "hidden";
 
 })();
-
