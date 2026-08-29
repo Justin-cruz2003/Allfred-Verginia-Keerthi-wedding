@@ -58,16 +58,12 @@ body {
 }
 
 
-/* Cover hidden after opening */
-
 #coverScreen.cover-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-
-/* Decorative moon */
 
 .cover-moon {
     position: absolute;
@@ -97,8 +93,6 @@ body {
 }
 
 
-/* Small blessing */
-
 .cover-blessing {
     position: relative;
     z-index: 2;
@@ -116,8 +110,6 @@ body {
     animation: coverDown 1.2s ease both;
 }
 
-
-/* Cover title */
 
 .cover-title {
     position: relative;
@@ -146,8 +138,6 @@ body {
 }
 
 
-/* Cover line */
-
 .cover-line {
     position: relative;
     z-index: 2;
@@ -168,8 +158,6 @@ body {
     animation: coverWiden 1.4s 0.3s ease both;
 }
 
-
-/* Couple names */
 
 .cover-names {
     position: relative;
@@ -199,8 +187,6 @@ body {
 }
 
 
-/* Ampersand */
-
 .cover-amp {
     margin: 0.1rem 0;
 
@@ -215,8 +201,6 @@ body {
     color: #d4aa70;
 }
 
-
-/* Date */
 
 .cover-date {
     position: relative;
@@ -321,8 +305,6 @@ body {
     color: #f4a8c0;
 }
 
-
-/* Hint */
 
 .cover-hint {
     position: relative;
@@ -827,7 +809,9 @@ section {
 .family-card,
 .event-card,
 .venue-card,
-.reception-box {
+.reception-box,
+.reception-details,
+.reception-map-card {
     background: rgba(255, 255, 255, 0.03);
 
     border: 1px solid rgba(212, 170, 112, 0.2);
@@ -1120,10 +1104,29 @@ section {
 }
 
 
+.cal-day.reception-highlighted {
+    background: #f4a8c0;
+
+    color: #050d1f;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 20px rgba(244, 168, 192, 0.5);
+
+    animation:
+        pulse 2s ease-in-out infinite;
+}
+
+
 .cal-legend {
     display: flex;
 
     justify-content: center;
+
+    gap: 1.2rem;
+
+    flex-wrap: wrap;
 
     margin-top: 1.2rem;
 
@@ -1157,6 +1160,11 @@ section {
 }
 
 
+.dot-pink {
+    background: #f4a8c0;
+}
+
+
 /* =========================================================
    VENUE
 ========================================================= */
@@ -1170,7 +1178,9 @@ section {
 }
 
 
-.venue-card:hover {
+.venue-card:hover,
+.reception-map-card:hover,
+.reception-details:hover {
     transform: translateY(-5px);
 }
 
@@ -1227,7 +1237,7 @@ section {
 
 
 /* =========================================================
-   RECEPTION
+   RECEPTION INTRO BOX
 ========================================================= */
 
 .reception-box {
@@ -1256,6 +1266,189 @@ section {
 
 .reception-box strong {
     color: #f0d29a;
+}
+
+
+/* =========================================================
+   POST-WEDDING RECEPTION
+========================================================= */
+
+.post-reception-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
+
+    margin-top: 3rem;
+
+    align-items: stretch;
+}
+
+
+/* Reception details */
+
+.reception-details {
+    padding: 2.5rem 2rem;
+
+    text-align: center;
+
+    transition: 0.35s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.reception-details .event-type {
+    margin-bottom: 1rem;
+}
+
+
+.reception-date {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 5.5rem;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #f4a8c0;
+
+    text-shadow:
+        0 0 40px rgba(244, 168, 192, 0.3);
+}
+
+
+.reception-month {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 0.15em;
+
+    color: #f0d29a;
+
+    margin-top: 0.2rem;
+}
+
+
+.reception-day {
+    margin-top: 0.4rem;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    color: rgba(253, 248, 240, 0.55);
+}
+
+
+.reception-info-row {
+    width: 100%;
+
+    max-width: 320px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 1rem;
+
+    margin: 0.8rem auto;
+
+    text-align: left;
+
+    padding: 0.8rem 1rem;
+
+    border: 1px solid rgba(212, 170, 112, 0.12);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+
+.reception-icon {
+    font-size: 1.3rem;
+
+    min-width: 30px;
+
+    text-align: center;
+}
+
+
+.info-heading {
+    display: block;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    color: #f4a8c0;
+
+    margin-bottom: 0.2rem;
+}
+
+
+.info-value {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.5;
+
+    color: rgba(253, 248, 240, 0.85);
+}
+
+
+.reception-message {
+    max-width: 400px;
+
+    margin-top: 1.2rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    line-height: 1.7;
+
+    color: rgba(253, 248, 240, 0.65);
+}
+
+
+/* Reception map */
+
+.reception-map-card {
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+
+.reception-map-card .map-wrapper {
+    height: 280px;
+}
+
+
+.reception-map-card .venue-info {
+    text-align: left;
 }
 
 
@@ -1629,9 +1822,50 @@ section {
     }
 
 
+    /* Reception becomes one column */
+
+    .post-reception-layout {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+    }
+
+
+    .reception-details {
+        padding:
+            2rem 1.2rem;
+    }
+
+
+    .reception-date {
+        font-size: 4.5rem;
+    }
+
+
+    .reception-month {
+        font-size: 1.1rem;
+    }
+
+
+    .reception-info-row {
+        max-width: 100%;
+    }
+
+
+    .reception-map-card .map-wrapper {
+        height: 230px;
+    }
+
+
+    .reception-map-card .venue-info {
+        text-align: center;
+    }
+
+
     .footer-names {
         font-size: 2rem;
     }
+
 }
 
 
@@ -1667,6 +1901,17 @@ section {
     .num {
         font-size: 1.9rem;
     }
+
+
+    .reception-date {
+        font-size: 4rem;
+    }
+
+
+    .reception-month {
+        font-size: 1rem;
+    }
+
 }
 
 
@@ -1688,4 +1933,3 @@ section {
         transition-duration: 0.01ms !important;
     }
 }
-
