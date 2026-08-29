@@ -50,30 +50,22 @@
 
     <!-- =====================================================
          COVER / OPENING SCREEN
-         
-         This screen is displayed first.
-         The website remains hidden until the button is clicked.
     ====================================================== -->
 
     <div id="coverScreen">
 
-        <!-- Decorative moon -->
         <div class="cover-moon"></div>
 
-        <!-- Small top text -->
         <p class="cover-blessing">
             ✦ With the Blessings of Almighty God ✦
         </p>
 
-        <!-- Main title -->
         <h1 class="cover-title">
             Wedding Invitation
         </h1>
 
-        <!-- Gold divider -->
         <div class="cover-line"></div>
 
-        <!-- Couple names -->
         <div class="cover-names">
 
             <span>
@@ -90,15 +82,14 @@
 
         </div>
 
-        <!-- Date -->
         <p class="cover-date">
             02 September 2026
         </p>
 
-        <!-- Open button -->
-        <button id="openInvitation"
-                class="open-button"
-                type="button">
+        <button
+            id="openInvitation"
+            class="open-button"
+            type="button">
 
             <span class="button-icon">
                 ♡
@@ -118,9 +109,6 @@
 
     <!-- =====================================================
          AUDIO
-         
-         Music starts after the user clicks "Open Invitation".
-         This avoids browser autoplay restrictions.
     ====================================================== -->
 
     <audio
@@ -134,8 +122,6 @@
 
     <!-- =====================================================
          MAIN WEBSITE
-         
-         Hidden until the cover button is clicked.
     ====================================================== -->
 
     <main id="weddingWebsite" class="website-hidden">
@@ -494,6 +480,14 @@
 
                         </span>
 
+                        <span>
+
+                            <span class="dot dot-pink"></span>
+
+                            Reception – 6th
+
+                        </span>
+
                     </div>
 
                 </div>
@@ -595,7 +589,7 @@
 
 
         <!-- =================================================
-             RECEPTION
+             POST-WEDDING RECEPTION
         ================================================== -->
 
         <section id="reception" class="fade-in">
@@ -611,69 +605,162 @@
                 </div>
 
 
-                <div class="reception-box">
-
-                    <h2 class="section-title">
-                        Reception
-                    </h2>
-
-                    <p>
-
-                        And thereafter, for the reception at
-
-                        <strong>
-
-                            Lakshmi Hall,
-                            Bharathi Nagar,
-                            Podanur Main Road,
-                            Coimbatore.
-
-                        </strong>
-
-                    </p>
-
-                </div>
+                <h2 class="section-title">
+                    Post-Wedding Reception
+                </h2>
 
 
-                <div class="venue-card fade-in">
+                <!-- Reception details + map -->
 
-                    <div class="map-wrapper">
+                <div class="post-reception-layout">
 
-                        <iframe
-                            src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Lakshmi Hall Podanur Coimbatore">
-                        </iframe>
+
+                    <!-- LEFT SIDE : RECEPTION DETAILS -->
+
+                    <div class="reception-details">
+
+                        <p class="event-type">
+                            ✿ Reception ✿
+                        </p>
+
+
+                        <div class="reception-date">
+                            06
+                        </div>
+
+
+                        <div class="reception-month">
+                            September 2026
+                        </div>
+
+
+                        <div class="reception-day">
+                            Sunday
+                        </div>
+
+
+                        <div class="divider">
+                            <span>♡</span>
+                        </div>
+
+
+                        <div class="reception-info-row">
+
+                            <span class="reception-icon">
+                                🕧
+                            </span>
+
+                            <div>
+
+                                <span class="info-heading">
+                                    Time
+                                </span>
+
+                                <span class="info-value">
+                                    12:30 PM onwards
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="reception-info-row">
+
+                            <span class="reception-icon">
+                                📍
+                            </span>
+
+                            <div>
+
+                                <span class="info-heading">
+                                    Venue
+                                </span>
+
+                                <span class="info-value">
+
+                                    DSA Bhavan
+
+                                    <br>
+
+                                    Dubasipalya,
+
+                                    <br>
+
+                                    Bangalore – 560059
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="reception-message">
+
+                            With great joy, we invite you to join
+                            us for our post-wedding reception and
+                            share in this beautiful celebration
+                            of love and togetherness.
+
+                        </p>
 
                     </div>
 
 
-                    <div class="venue-info">
 
-                        <p class="venue-type">
-                            🎉 Reception Venue
-                        </p>
+                    <!-- RIGHT SIDE : MAP -->
 
-                        <h3>
-                            Lakshmi Hall
-                        </h3>
+                    <div class="reception-map-card">
 
-                        <p>
+                        <div class="map-wrapper">
 
-                            Bharathi Nagar,
-                            Podanur Main Road,
+                            <iframe
+                                src="https://maps.google.com/maps?q=DSA+Bhavan+Dubasipalya+Bangalore+560059&output=embed&z=15"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="DSA Bhavan Dubasipalya Bangalore">
+                            </iframe>
 
-                            <br>
+                        </div>
 
-                            Coimbatore
 
-                        </p>
+                        <div class="venue-info">
+
+                            <p class="venue-type">
+                                🎉 Reception Venue
+                            </p>
+
+                            <h3>
+                                DSA Bhavan
+                            </h3>
+
+                            <p>
+
+                                Dubasipalya,
+
+                                <br>
+
+                                Bangalore – 560059
+
+                            </p>
+
+                            <p>
+                                Sunday · 06 September 2026
+                            </p>
+
+                            <p>
+                                12:30 PM onwards
+                            </p>
+
+                        </div>
 
                     </div>
 
+
                 </div>
+
 
             </div>
 
@@ -818,7 +905,7 @@
 
                 <p class="creator">
 
-                    Made by: Justin Cruz
+                    Made by: SIORA MEMORIES AND DESIGN
 
                     &nbsp;|&nbsp;
 
