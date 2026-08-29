@@ -2,44 +2,29 @@
 <html lang="en">
 
 <head>
-
-    <!-- =====================================================
-         BASIC PAGE SETTINGS
-    ====================================================== -->
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Wedding Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi">
+          content="Post-Wedding Reception Invitation – A.C.S. Allfred & A.J.K. Verginia Keerthi">
+
+    <meta name="theme-color" content="#f7f1e8">
 
     <title>
-        Wedding Invitation – Allfred & Verginia Keerthi
+        Post-Wedding Reception – Allfred & Verginia Keerthi
     </title>
 
-
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
 
-
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
-
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -50,30 +35,22 @@
 
     <!-- =====================================================
          COVER / OPENING SCREEN
-         
-         This screen is displayed first.
-         The website remains hidden until the button is clicked.
     ====================================================== -->
 
     <div id="coverScreen">
 
-        <!-- Decorative moon -->
         <div class="cover-moon"></div>
 
-        <!-- Small top text -->
         <p class="cover-blessing">
             ✦ With the Blessings of Almighty God ✦
         </p>
 
-        <!-- Main title -->
         <h1 class="cover-title">
-            Wedding Invitation
+            Post-Wedding Reception
         </h1>
 
-        <!-- Gold divider -->
         <div class="cover-line"></div>
 
-        <!-- Couple names -->
         <div class="cover-names">
 
             <span>
@@ -90,15 +67,14 @@
 
         </div>
 
-        <!-- Date -->
         <p class="cover-date">
-            02 September 2026
+            06 September 2026
         </p>
 
-        <!-- Open button -->
-        <button id="openInvitation"
-                class="open-button"
-                type="button">
+        <button
+            id="openInvitation"
+            class="open-button"
+            type="button">
 
             <span class="button-icon">
                 ♡
@@ -115,12 +91,8 @@
     </div>
 
 
-
     <!-- =====================================================
-         AUDIO
-         
-         Music starts after the user clicks "Open Invitation".
-         This avoids browser autoplay restrictions.
+         BACKGROUND MUSIC
     ====================================================== -->
 
     <audio
@@ -131,22 +103,18 @@
     </audio>
 
 
-
     <!-- =====================================================
          MAIN WEBSITE
-         
-         Hidden until the cover button is clicked.
     ====================================================== -->
 
     <main id="weddingWebsite" class="website-hidden">
 
 
         <!-- =================================================
-             STAR BACKGROUND
+             STAR / DECORATIVE BACKGROUND
         ================================================== -->
 
         <canvas id="starfield"></canvas>
-
 
 
         <!-- =================================================
@@ -162,10 +130,11 @@
             </p>
 
             <h1 class="invite-title">
-                Wedding Invitation
+                Post-Wedding Reception
             </h1>
 
             <div class="gold-line"></div>
+
 
             <div class="names">
 
@@ -179,32 +148,36 @@
 
             </div>
 
+
             <p class="tagline">
 
-                “What God has joined together,
-                let no one separate.”
+                “The Lord has done great things for us,
+                and we are filled with joy.”
 
                 <br>
 
                 <span>
-                    — Mark 10:9
+                    — Psalm 126:3
                 </span>
 
             </p>
 
+
             <p class="invitation-text">
 
-                With the abundant blessings of Almighty God
-                and the loving prayers of our beloved
-                grandparents and family members,
-                we cordially invite you to grace the wedding
-                ceremony of our beloved children with your
-                esteemed presence and blessings.
+                With great joy, we invite you to the
+                Post-Wedding Reception of
+
+                <strong>
+                    A.C.S. Allfred &amp; A.J.K. Verginia Keerthi
+                </strong>
+
+                and request the honour of your gracious
+                presence and blessings on this joyful occasion.
 
             </p>
 
         </section>
-
 
 
         <!-- =================================================
@@ -216,12 +189,13 @@
             <div class="container">
 
                 <span class="section-label">
-                    Counting down to the wedding day
+                    Counting down to the reception
                 </span>
 
                 <div class="divider">
                     <span>✦</span>
                 </div>
+
 
                 <div class="countdown-grid">
 
@@ -283,6 +257,76 @@
         </section>
 
 
+        <!-- =================================================
+             INVITATION MESSAGE
+        ================================================== -->
+
+        <section id="invitation" class="fade-in">
+
+            <div class="container">
+
+                <span class="section-label">
+                    A Joyful Invitation
+                </span>
+
+                <div class="divider">
+                    <span>♡</span>
+                </div>
+
+
+                <div class="reception-box">
+
+                    <h2 class="section-title">
+                        With Great Joy
+                    </h2>
+
+                    <p>
+
+                        “The Lord has done great things for us,
+                        and we are filled with joy.”
+
+                    </p>
+
+                    <p>
+
+                        With great joy, we invite you to the
+                        <strong>Post-Wedding Reception</strong>
+                        of our beloved
+
+                    </p>
+
+
+                    <div class="highlight-names">
+
+                        <span>
+                            A.C.S. Allfred
+                        </span>
+
+                        <span class="amp">
+                            &amp;
+                        </span>
+
+                        <span>
+                            A.J.K. Verginia Keerthi
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        Your gracious presence and blessings
+                        will make this celebration even more
+                        special and memorable for us.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
         <!-- =================================================
              FAMILY
@@ -303,6 +347,9 @@
 
                 <div class="family-grid">
 
+
+                    <!-- Bride Family -->
+
                     <div class="family-card">
 
                         <p class="family-label">
@@ -319,6 +366,8 @@
 
                     </div>
 
+
+                    <!-- Groom Family -->
 
                     <div class="family-card">
 
@@ -347,9 +396,8 @@
         </section>
 
 
-
         <!-- =================================================
-             WEDDING CEREMONY
+             RECEPTION EVENT
         ================================================== -->
 
         <section id="events" class="fade-in">
@@ -357,7 +405,7 @@
             <div class="container">
 
                 <span class="section-label">
-                    The Wedding Ceremony
+                    Join Us in Celebration
                 </span>
 
                 <div class="divider">
@@ -365,55 +413,67 @@
                 </div>
 
                 <h2 class="section-title">
-                    Holy Matrimony
+                    Post-Wedding Reception
                 </h2>
 
 
                 <div class="event-card single-event">
 
                     <p class="event-type">
-                        ✿ Wedding Day ✿
+                        ✿ Reception Day ✿
                     </p>
 
+
                     <div class="big-date">
-                        02
+                        06
                     </div>
+
 
                     <div class="month-year">
                         September 2026
                     </div>
 
+
                     <div class="day-name">
-                        Wednesday
+                        Sunday
                     </div>
+
 
                     <div class="divider">
                         <span>♡</span>
                     </div>
 
 
+                    <!-- Time -->
+
                     <div class="info-row">
 
-                        <span>🕘</span>
+                        <span>
+                            🕧
+                        </span>
 
                         <span>
-                            9:30 AM
+                            12:30 PM onwards
                         </span>
 
                     </div>
 
 
+                    <!-- Venue -->
+
                     <div class="info-row">
 
-                        <span>⛪</span>
+                        <span>
+                            📍
+                        </span>
 
                         <span>
 
-                            St. Joseph's Church,
-
+                            DSA Bhavan,
                             <br>
-
-                            Podanur, Coimbatore
+                            Dubasipalya,
+                            <br>
+                            Bangalore - 560059
 
                         </span>
 
@@ -422,23 +482,8 @@
 
                     <p class="bishop">
 
-                        Holy Mass will be solemnized by
-
-                        <br>
-
-                        <strong>
-                            His Grace Most Rev. Dr. Arokiaraj Savarimuthu
-                        </strong>
-
-                        <br>
-
-                        <span>
-                            (Bishop of the Diocese of Tiruchirappalli)
-                        </span>
-
-                        <br>
-
-                        together with the concelebrating priests.
+                        We look forward to your gracious
+                        presence and blessings.
 
                     </p>
 
@@ -447,7 +492,6 @@
             </div>
 
         </section>
-
 
 
         <!-- =================================================
@@ -466,9 +510,11 @@
                     <span>✦</span>
                 </div>
 
+
                 <h2 class="section-title">
                     September 2026
                 </h2>
+
 
                 <br>
 
@@ -479,10 +525,189 @@
                         September 2026
                     </div>
 
-                    <div
-                        class="cal-grid"
-                        id="calGrid">
+
+                    <div class="cal-grid">
+
+                        <!-- Week days -->
+
+                        <div class="cal-day-name">
+                            Sun
+                        </div>
+
+                        <div class="cal-day-name">
+                            Mon
+                        </div>
+
+                        <div class="cal-day-name">
+                            Tue
+                        </div>
+
+                        <div class="cal-day-name">
+                            Wed
+                        </div>
+
+                        <div class="cal-day-name">
+                            Thu
+                        </div>
+
+                        <div class="cal-day-name">
+                            Fri
+                        </div>
+
+                        <div class="cal-day-name">
+                            Sat
+                        </div>
+
+
+                        <!-- Empty days before September 1 -->
+
+                        <div class="cal-empty"></div>
+
+                        <div class="cal-empty"></div>
+
+                        <div class="cal-day">
+                            1
+                        </div>
+
+
+                        <div class="cal-day wedding-day">
+                            2
+                        </div>
+
+
+                        <div class="cal-day">
+                            3
+                        </div>
+
+                        <div class="cal-day">
+                            4
+                        </div>
+
+                        <div class="cal-day">
+                            5
+                        </div>
+
+
+                        <!-- Week 2 -->
+
+                        <div class="cal-day reception-day">
+                            <span>6</span>
+                            <small>Reception</small>
+                        </div>
+
+                        <div class="cal-day">
+                            7
+                        </div>
+
+                        <div class="cal-day">
+                            8
+                        </div>
+
+                        <div class="cal-day">
+                            9
+                        </div>
+
+                        <div class="cal-day">
+                            10
+                        </div>
+
+                        <div class="cal-day">
+                            11
+                        </div>
+
+                        <div class="cal-day">
+                            12
+                        </div>
+
+
+                        <!-- Week 3 -->
+
+                        <div class="cal-day">
+                            13
+                        </div>
+
+                        <div class="cal-day">
+                            14
+                        </div>
+
+                        <div class="cal-day">
+                            15
+                        </div>
+
+                        <div class="cal-day">
+                            16
+                        </div>
+
+                        <div class="cal-day">
+                            17
+                        </div>
+
+                        <div class="cal-day">
+                            18
+                        </div>
+
+                        <div class="cal-day">
+                            19
+                        </div>
+
+
+                        <!-- Week 4 -->
+
+                        <div class="cal-day">
+                            20
+                        </div>
+
+                        <div class="cal-day">
+                            21
+                        </div>
+
+                        <div class="cal-day">
+                            22
+                        </div>
+
+                        <div class="cal-day">
+                            23
+                        </div>
+
+                        <div class="cal-day">
+                            24
+                        </div>
+
+                        <div class="cal-day">
+                            25
+                        </div>
+
+                        <div class="cal-day">
+                            26
+                        </div>
+
+
+                        <!-- Week 5 -->
+
+                        <div class="cal-day">
+                            27
+                        </div>
+
+                        <div class="cal-day">
+                            28
+                        </div>
+
+                        <div class="cal-day">
+                            29
+                        </div>
+
+                        <div class="cal-day">
+                            30
+                        </div>
+
+                        <div class="cal-empty"></div>
+
+                        <div class="cal-empty"></div>
+
+                        <div class="cal-empty"></div>
+
                     </div>
+
 
                     <div class="cal-legend">
 
@@ -490,7 +715,7 @@
 
                             <span class="dot dot-gold"></span>
 
-                            Wedding – 2nd
+                            Post-Wedding Reception – 6th
 
                         </span>
 
@@ -503,9 +728,8 @@
         </section>
 
 
-
         <!-- =================================================
-             WEDDING VENUE
+             RECEPTION VENUE
         ================================================== -->
 
         <section id="venue" class="fade-in">
@@ -524,24 +748,39 @@
                 <div class="reception-box">
 
                     <h2 class="section-title">
-                        Wedding Venue
+                        Reception Venue
                     </h2>
+
 
                     <p>
 
                         We request the honour of your presence
-                        at the wedding ceremony at
+                        at the Post-Wedding Reception of
 
-                        <strong>
-                            St. Joseph's Church,
-                            Podanur,
-                            Coimbatore
-                        </strong>
+                    </p>
+
+
+                    <h3 class="venue-highlight">
+
+                        A.C.S. Allfred
+                        <span>&amp;</span>
+                        A.J.K. Verginia Keerthi
+
+                    </h3>
+
+
+                    <p>
 
                         on
 
                         <strong>
-                            02 September 2026 at 9:30 AM
+                            Sunday, 6 September 2026
+                        </strong>
+
+                        at
+
+                        <strong>
+                            12:30 PM onwards
                         </strong>
 
                     </p>
@@ -549,16 +788,18 @@
                 </div>
 
 
+                <!-- Google Map -->
+
                 <div class="venue-card fade-in">
 
                     <div class="map-wrapper">
 
                         <iframe
-                            src="https://maps.google.com/maps?q=St+Joseph%27s+Church+Podanur+Coimbatore&output=embed&z=15"
+                            src="https://maps.google.com/maps?q=DSA%20Bhavan%20Dubasipalya%20Bangalore%20560059&output=embed&z=15"
                             allowfullscreen
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                            title="St. Joseph's Church Podanur Coimbatore">
+                            title="DSA Bhavan Dubasipalya Bangalore">
                         </iframe>
 
                     </div>
@@ -567,22 +808,44 @@
                     <div class="venue-info">
 
                         <p class="venue-type">
-                            ⛪ Wedding Venue
+                            📍 Reception Venue
                         </p>
+
 
                         <h3>
-                            St. Joseph's Church
+                            DSA Bhavan
                         </h3>
 
-                        <p>
-                            Podanur,
-                            <br>
-                            Coimbatore
-                        </p>
 
                         <p>
-                            02 September 2026 · 9:30 AM
+
+                            Dubasipalya,
+                            <br>
+                            Bangalore - 560059
+
                         </p>
+
+
+                        <p>
+
+                            Sunday, 6 September 2026
+                            <br>
+                            12:30 PM onwards
+
+                        </p>
+
+
+                        <!-- Google Maps Button -->
+
+                        <a
+                            class="map-button"
+                            href="https://www.google.com/maps/search/?api=1&query=DSA+Bhavan+Dubasipalya+Bangalore+560059"
+                            target="_blank"
+                            rel="noopener">
+
+                            📍 Open in Google Maps
+
+                        </a>
 
                     </div>
 
@@ -593,17 +856,16 @@
         </section>
 
 
-
         <!-- =================================================
-             RECEPTION
+             CONTACT
         ================================================== -->
 
-        <section id="reception" class="fade-in">
+        <section id="contact" class="fade-in">
 
             <div class="container">
 
                 <span class="section-label">
-                    And thereafter
+                    For more information
                 </span>
 
                 <div class="divider">
@@ -611,65 +873,58 @@
                 </div>
 
 
-                <div class="reception-box">
-
-                    <h2 class="section-title">
-                        Reception
-                    </h2>
-
-                    <p>
-
-                        And thereafter, for the reception at
-
-                        <strong>
-
-                            Lakshmi Hall,
-                            Bharathi Nagar,
-                            Podanur Main Road,
-                            Coimbatore.
-
-                        </strong>
-
-                    </p>
-
-                </div>
+                <h2 class="section-title">
+                    Contact
+                </h2>
 
 
-                <div class="venue-card fade-in">
+                <div class="family-grid">
 
-                    <div class="map-wrapper">
 
-                        <iframe
-                            src="https://maps.google.com/maps?q=Lakshmi+Hall+Podanur+Main+Road+Coimbatore&output=embed&z=15"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Lakshmi Hall Podanur Coimbatore">
-                        </iframe>
+                    <!-- Chones -->
+
+                    <div class="family-card">
+
+                        <p class="family-label">
+                            Chones
+                        </p>
+
+                        <h2>
+                            9740813249
+                        </h2>
+
+
+                        <a
+                            href="tel:+919740813249"
+                            class="contact-button">
+
+                            📞 Call
+
+                        </a>
 
                     </div>
 
 
-                    <div class="venue-info">
+                    <!-- Alex -->
 
-                        <p class="venue-type">
-                            🎉 Reception Venue
+                    <div class="family-card">
+
+                        <p class="family-label">
+                            Alex
                         </p>
 
-                        <h3>
-                            Lakshmi Hall
-                        </h3>
+                        <h2>
+                            9900950144
+                        </h2>
 
-                        <p>
 
-                            Bharathi Nagar,
-                            Podanur Main Road,
+                        <a
+                            href="tel:+919900950144"
+                            class="contact-button">
 
-                            <br>
+                            📞 Call
 
-                            Coimbatore
-
-                        </p>
+                        </a>
 
                     </div>
 
@@ -680,12 +935,12 @@
         </section>
 
 
-
         <!-- =================================================
              FOOTER
         ================================================== -->
 
         <section id="footer">
+
 
             <svg
                 class="cityscape"
@@ -708,10 +963,20 @@
                     <rect x="370" y="70" width="45" height="110"/>
                     <rect x="430" y="100" width="60" height="80"/>
 
-                    <polygon points="460,60 430,100 490,100"/>
+                    <polygon
+                        points="460,60 430,100 490,100"/>
 
-                    <rect x="453" y="35" width="14" height="30"/>
-                    <rect x="447" y="52" width="26" height="5"/>
+                    <rect
+                        x="453"
+                        y="35"
+                        width="14"
+                        height="30"/>
+
+                    <rect
+                        x="447"
+                        y="52"
+                        width="26"
+                        height="5"/>
 
                     <rect x="500" y="80" width="45" height="100"/>
                     <rect x="555" y="110" width="30" height="70"/>
@@ -764,6 +1029,7 @@
                     r="25"
                     fill="rgba(212,170,112,0.15)"/>
 
+
                 <circle
                     cx="500"
                     cy="30"
@@ -779,9 +1045,11 @@
                     With Love
                 </span>
 
+
                 <div class="divider">
                     <span>✦</span>
                 </div>
+
 
                 <p class="footer-msg">
 
@@ -803,7 +1071,7 @@
 
                 <div class="footer-date">
 
-                    02
+                    06
                     &nbsp;
                     September
                     &nbsp;
@@ -814,6 +1082,27 @@
 
                 <br>
                 <br>
+
+
+                <!-- Contact -->
+
+                <p class="creator">
+
+                    Chones:
+
+                    <a href="tel:+919740813249">
+                        📞 9740813249
+                    </a>
+
+                    &nbsp; | &nbsp;
+
+                    Alex:
+
+                    <a href="tel:+919900950144">
+                        📞 9900950144
+                    </a>
+
+                </p>
 
 
                 <p class="creator">
@@ -847,7 +1136,6 @@
 
 
     </main>
-
 
 
     <!-- =====================================================
