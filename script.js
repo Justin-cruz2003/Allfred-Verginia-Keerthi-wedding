@@ -20,7 +20,8 @@
     if (
         !coverScreen ||
         !openButton ||
-        !weddingWebsite
+        !weddingWebsite ||
+        !weddingSong
     ) {
         return;
     }
@@ -28,45 +29,46 @@
 
     openButton.addEventListener("click", function () {
 
-        /* =====================================================
-           START WEDDING MUSIC
-        ===================================================== */
+        /*
+         * IMPORTANT:
+         *
+         * The music is played inside the button click.
+         * This is allowed by mobile browsers because
+         * the user has interacted with the page.
+         */
 
-        if (weddingSong) {
+        weddingSong.volume = 0.35;
+        weddingSong.loop = true;
 
-            weddingSong.volume = 0.35;
-            weddingSong.loop = true;
+        const playPromise =
+            weddingSong.play();
 
-            const playPromise =
-                weddingSong.play();
 
-            if (playPromise !== undefined) {
+        if (playPromise !== undefined) {
 
-                playPromise
-                    .then(function () {
+            playPromise
+                .then(function () {
 
-                        console.log(
-                            "Wedding music started successfully."
-                        );
+                    console.log(
+                        "Wedding music started successfully."
+                    );
 
-                    })
-                    .catch(function (error) {
+                })
+                .catch(function (error) {
 
-                        console.warn(
-                            "Music could not start:",
-                            error
-                        );
+                    console.warn(
+                        "Music could not start:",
+                        error
+                    );
 
-                    });
-
-            }
+                });
 
         }
 
 
-        /* =====================================================
-           SHOW WEBSITE
-        ===================================================== */
+        /*
+         * Show the wedding website
+         */
 
         weddingWebsite.classList.remove(
             "website-hidden"
@@ -77,26 +79,26 @@
         );
 
 
-        /* =====================================================
-           HIDE COVER SCREEN
-        ===================================================== */
+        /*
+         * Hide cover
+         */
 
         coverScreen.classList.add(
             "cover-hidden"
         );
 
 
-        /* =====================================================
-           ENABLE PAGE SCROLLING
-        ===================================================== */
+        /*
+         * Allow page scrolling again
+         */
 
         document.body.style.overflowY = "auto";
-        document.body.style.overflowX = "hidden";
 
 
-        /* =====================================================
-           COMPLETELY REMOVE COVER AFTER ANIMATION
-        ===================================================== */
+        /*
+         * Remove cover from interaction
+         * after its fade animation.
+         */
 
         setTimeout(function () {
 
@@ -119,35 +121,25 @@
     const canvas =
         document.getElementById("starfield");
 
-
-    if (!canvas) {
-        return;
-    }
+    if (!canvas) return;
 
 
     const ctx =
         canvas.getContext("2d");
 
 
-    let canvasWidth = 0;
-    let canvasHeight = 0;
+    let canvasWidth;
+    let canvasHeight;
 
     let stars = [];
 
     let animationTime = 0;
 
 
-    /* =====================================================
-       RESIZE CANVAS
-    ===================================================== */
-
     function resizeCanvas() {
 
         const devicePixelRatio =
-            Math.min(
-                window.devicePixelRatio || 1,
-                2
-            );
+            Math.min(window.devicePixelRatio || 1, 2);
 
 
         canvasWidth =
@@ -182,10 +174,6 @@
 
     }
 
-
-    /* =====================================================
-       CREATE STARS
-    ===================================================== */
 
     function createStars() {
 
@@ -231,10 +219,6 @@
 
     }
 
-
-    /* =====================================================
-       DRAW STARS
-    ===================================================== */
 
     function drawStars() {
 
@@ -294,25 +278,16 @@
     }
 
 
-    /* =====================================================
-       WINDOW RESIZE
-    ===================================================== */
-
     window.addEventListener(
         "resize",
         function () {
 
             resizeCanvas();
-
             createStars();
 
         }
     );
 
-
-    /* =====================================================
-       START STARFIELD
-    ===================================================== */
 
     resizeCanvas();
 
@@ -336,15 +311,6 @@
         );
 
 
-    if (!fadeElements.length) {
-        return;
-    }
-
-
-    /* =====================================================
-       FALLBACK FOR OLD BROWSERS
-    ===================================================== */
-
     if (
         !("IntersectionObserver" in window)
     ) {
@@ -364,13 +330,8 @@
     }
 
 
-    /* =====================================================
-       INTERSECTION OBSERVER
-    ===================================================== */
-
     const observer =
         new IntersectionObserver(
-
             function (entries) {
 
                 entries.forEach(
@@ -395,11 +356,9 @@
                 );
 
             },
-
             {
                 threshold: 0.12
             }
-
         );
 
 
@@ -419,25 +378,13 @@
 
 /* =========================================================
    COUNTDOWN TIMER
-   POST-WEDDING RECEPTION
-   06 SEPTEMBER 2026 - 12:30 PM
 ========================================================= */
 
 (function () {
 
-    /*
-     * Reception date:
-     *
-     * Sunday
-     * 06 September 2026
-     * 12:30 PM
-     *
-     * +05:30 = Indian Standard Time
-     */
-
     const targetDate =
         new Date(
-            "2026-09-06T12:30:00+05:30"
+            "2026-09-02T09:30:00+05:30"
         ).getTime();
 
 
@@ -449,10 +396,6 @@
     ];
 
 
-    /* =====================================================
-       UPDATE COUNTDOWN
-    ===================================================== */
-
     function updateCountdown() {
 
         const difference =
@@ -460,73 +403,28 @@
             Date.now();
 
 
-        /* =================================================
-           EVENT HAS STARTED
-        ================================================= */
-
         if (difference <= 0) {
 
-            const daysElement =
-                document.getElementById(
-                    "cdDays"
-                );
+            countdownIds.forEach(
+                function (id) {
 
-            const hoursElement =
-                document.getElementById(
-                    "cdHours"
-                );
+                    const element =
+                        document.getElementById(id);
 
-            const minutesElement =
-                document.getElementById(
-                    "cdMins"
-                );
+                    if (element) {
 
-            const secondsElement =
-                document.getElementById(
-                    "cdSecs"
-                );
+                        element.textContent =
+                            "00";
 
+                    }
 
-            if (daysElement) {
-
-                daysElement.textContent =
-                    "00";
-
-            }
-
-
-            if (hoursElement) {
-
-                hoursElement.textContent =
-                    "00";
-
-            }
-
-
-            if (minutesElement) {
-
-                minutesElement.textContent =
-                    "00";
-
-            }
-
-
-            if (secondsElement) {
-
-                secondsElement.textContent =
-                    "00";
-
-            }
-
+                }
+            );
 
             return;
 
         }
 
-
-        /* =================================================
-           CALCULATE TIME
-        ================================================= */
 
         const days =
             Math.floor(
@@ -555,37 +453,26 @@
             );
 
 
-        /* =================================================
-           GET HTML ELEMENTS
-        ================================================= */
-
         const daysElement =
             document.getElementById(
                 "cdDays"
             );
-
 
         const hoursElement =
             document.getElementById(
                 "cdHours"
             );
 
-
         const minutesElement =
             document.getElementById(
                 "cdMins"
             );
-
 
         const secondsElement =
             document.getElementById(
                 "cdSecs"
             );
 
-
-        /* =================================================
-           DISPLAY DAYS
-        ================================================= */
 
         if (daysElement) {
 
@@ -596,10 +483,6 @@
         }
 
 
-        /* =================================================
-           DISPLAY HOURS
-        ================================================= */
-
         if (hoursElement) {
 
             hoursElement.textContent =
@@ -609,10 +492,6 @@
         }
 
 
-        /* =================================================
-           DISPLAY MINUTES
-        ================================================= */
-
         if (minutesElement) {
 
             minutesElement.textContent =
@@ -621,10 +500,6 @@
 
         }
 
-
-        /* =================================================
-           DISPLAY SECONDS
-        ================================================= */
 
         if (secondsElement) {
 
@@ -637,16 +512,8 @@
     }
 
 
-    /* =====================================================
-       RUN IMMEDIATELY
-    ===================================================== */
-
     updateCountdown();
 
-
-    /* =====================================================
-       UPDATE EVERY SECOND
-    ===================================================== */
 
     setInterval(
         updateCountdown,
@@ -659,7 +526,6 @@
 
 /* =========================================================
    SEPTEMBER 2026 CALENDAR
-   RECEPTION HIGHLIGHT = 6TH
 ========================================================= */
 
 (function () {
@@ -670,21 +536,7 @@
         );
 
 
-    if (!calendarGrid) {
-        return;
-    }
-
-
-    /*
-     * September 2026:
-     *
-     * Tuesday = 1
-     * Wednesday = 2
-     * Thursday = 3
-     * Friday = 4
-     * Saturday = 5
-     * Sunday = 6
-     */
+    if (!calendarGrid) return;
 
 
     const days = [
@@ -697,10 +549,6 @@
         "Sat"
     ];
 
-
-    /* =====================================================
-       ADD DAY HEADERS
-    ===================================================== */
 
     days.forEach(
         function (day) {
@@ -727,10 +575,13 @@
     );
 
 
-    /* =====================================================
-       EMPTY DAYS
-       SEPTEMBER 1, 2026 IS TUESDAY
-    ===================================================== */
+    /*
+     * September 1, 2026 is Tuesday.
+     * Therefore two empty spaces are required:
+     *
+     * Sunday
+     * Monday
+     */
 
     for (
         let i = 0;
@@ -755,10 +606,6 @@
     }
 
 
-    /* =====================================================
-       CREATE SEPTEMBER 2026 DAYS
-    ===================================================== */
-
     for (
         let date = 1;
         date <= 30;
@@ -779,39 +626,10 @@
             date;
 
 
-        /* =================================================
-           HIGHLIGHT RECEPTION DAY
-           SEPTEMBER 6
-        ================================================= */
-
-        if (date === 6) {
+        if (date === 2) {
 
             dateElement.classList.add(
                 "highlighted"
-            );
-
-
-            dateElement.classList.add(
-                "reception-highlight"
-            );
-
-
-            /*
-             * Add small reception label
-             */
-
-            const label =
-                document.createElement(
-                    "small"
-                );
-
-
-            label.textContent =
-                "Reception";
-
-
-            dateElement.appendChild(
-                label
             );
 
         }
@@ -839,114 +657,16 @@
         );
 
 
-    if (!coverScreen) {
-        return;
-    }
+    if (!coverScreen) return;
 
 
     /*
-     * Prevent scrolling while
-     * opening invitation screen is visible.
+     * The page cannot be scrolled while
+     * the opening cover is displayed.
      */
 
-    document.body.style.overflow =
-        "hidden";
-
-
-    document.body.style.overflowX =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
 })();
 
-
-
-/* =========================================================
-   SMOOTH SCROLL
-========================================================= */
-
-(function () {
-
-    /*
-     * Enable smooth scrolling
-     * for internal links.
-     */
-
-    document.documentElement.style.scrollBehavior =
-        "smooth";
-
-})();
-
-
-
-/* =========================================================
-   PHONE CONTACT LINKS
-========================================================= */
-
-(function () {
-
-    /*
-     * This section does not require
-     * any extra HTML.
-     *
-     * Phone numbers using tel:
-     * automatically open the phone
-     * dialer on mobile devices.
-     */
-
-    const phoneLinks =
-        document.querySelectorAll(
-            'a[href^="tel:"]'
-        );
-
-
-    phoneLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    console.log(
-                        "Opening phone dialer..."
-                    );
-
-                }
-            );
-
-        }
-    );
-
-})();
-
-
-
-/* =========================================================
-   GOOGLE MAPS EXTERNAL LINK
-========================================================= */
-
-(function () {
-
-    const mapLinks =
-        document.querySelectorAll(
-            'a[href*="google.com/maps"]'
-        );
-
-
-    mapLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    console.log(
-                        "Opening Google Maps..."
-                    );
-
-                }
-            );
-
-        }
-    );
-
-})();
+this is the js code , alterr for it and give me the full js code 
