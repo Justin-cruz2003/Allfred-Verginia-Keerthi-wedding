@@ -669,4 +669,3 @@
 
 })();
 
-this is the js code , alterr for it and give me the full js code 
